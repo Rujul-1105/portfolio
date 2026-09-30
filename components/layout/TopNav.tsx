@@ -42,7 +42,7 @@ export function TopNav() {
           <ThemeToggle />
           <MobileMenu
             items={site.nav}
-            cta={{ label: `Email — ${site.email}`, href: `mailto:${site.email}` }}
+            cta={{ label: "Email", href: `mailto:${site.email}` }}
           />
         </div>
       </nav>

@@ -94,7 +94,7 @@ export function MobileMenu({ items, cta, onAction }: MobileMenuProps) {
       <nav
         id="mobile-menu-panel"
         aria-label="Mobile navigation"
-        className={`fixed top-0 right-0 z-50 h-full w-[78%] max-w-sm bg-paper border-l border-line shadow-2xl transition-transform duration-300 ease-out md:hidden ${
+        className={`fixed top-0 right-0 z-50 h-full w-[78%] max-w-sm bg-paper border-l border-line shadow-2xl transition-transform duration-300 ease-out md:hidden overflow-x-hidden ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >

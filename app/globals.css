@@ -90,12 +90,14 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   min-height: 100dvh;
+  overflow-x: hidden;
   transition: background-color 400ms ease, color 400ms ease;
 }
 
