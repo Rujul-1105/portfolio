@@ -20,7 +20,8 @@
         "aspect": "3/2"
       },
       "featured": true,
-      "status": "shipped"
+      "status": "shipped",
+      "previewUrl": "https://en.wikipedia.org/wiki/Reading"
     },
     {
       "slug": "fieldnotes",
@@ -40,7 +41,8 @@
         "height": 1067,
         "aspect": "3/2"
       },
-      "status": "shipped"
+      "status": "shipped",
+      "previewUrl": "https://en.wikipedia.org/wiki/Journal"
     },
     {
       "slug": "compass",
@@ -62,7 +64,8 @@
         "height": 1067,
         "aspect": "3/2"
       },
-      "status": "archived"
+      "status": "archived",
+      "previewUrl": "https://en.wikipedia.org/wiki/Web_feed"
     },
     {
       "slug": "ledger",
@@ -83,7 +86,8 @@
         "height": 1067,
         "aspect": "3/2"
       },
-      "status": "shipped"
+      "status": "shipped",
+      "previewUrl": "https://en.wikipedia.org/wiki/Command-line_interface"
     }
   ]
 }

@@ -1,79 +1,43 @@
 # Roadmap
 
-## Current — v1.2 (shipped)
-Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content, light + dark theme, GitHub activity graph, hover-overlay project cards with opt-in iframe preview.
+## Current — v1.2 (shipped, working)
+Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content, light + dark theme, GitHub activity graph, hover-overlay project cards with opt-in iframe preview. Lives on `main` branch.
 
-## Next — v2 (planning)
+This is now the active working version — user feedback was that v2 (the black+red superteam.fun redesign) didn't resonate, so the v2.1 work is archived on its own branch and we'll iterate on v1 from here.
 
-**Brief**: A new version inspired by [talent.superteam.fun](https://talent.superteam.fun/). Shift from editorial-minimal to a bold, product-launch aesthetic — still typographic, but louder.
+## Archived — v2 (black + red superteam.fun redesign)
+Lives on the `v2` branch. The full v2.1 redesign (deep violet/lime → black/red, Inter + JetBrains Mono, TextRain background, BracketButton + SectionCorners, dotted name wordmark, etc.) is preserved at commit `3d9273c`. Available for reference or revival — not actively maintained.
 
-**Reference aesthetic**:
-- Dark-mode default, deep violet/purple palette (Solana-brand-adjacent but not literal)
-- Generous whitespace, card-based layouts with subtle rounded corners
-- Bold gradient hero, animated light/star decorations
-- 3-column feature grids, horizontal step processes
-- Profile-centric framing
-- Web3 / energetic vibe (less editorial-essay, more "ship it")
-
-**What we keep from v1**:
+## What we keep in v1 (the active direction)
 - Next.js 15 + Tailwind v4 + Motion + TS stack
 - JSON-driven content (`data/*.json` stays the same shape)
 - Zod validation, types as single source of truth
-- Light + dark toggle (dark becomes the default)
-- Fonts (Boldonse, Fraunces, Inter Tight, JetBrains Mono) — rebalance which font owns which moment
-- Component primitives folder structure
+- Light + dark toggle (light is the default, dark via `.dark` class)
+- Fonts: Boldonse (hero), Fraunces (display serif), Inter Tight (body), JetBrains Mono (labels)
+- Bohemian warm palette + cyber neon accent (`--color-neon`)
+- Background depth: dot grid + drifting geometric outlines + SVG noise
+- GitHub activity grid (mock data, real API ready to wire)
+- Hover-overlay project cards (image preview + iframe opt-in)
 
-**What changes for v2**:
+## v1 — open iteration items
+Next things we might want to address on this version, in rough order of payoff:
 
-### Aesthetic
-- Palette: deep violet `#1a1033` paper, electric violet `#a855f7` accent, lime `#a3e635` or cyan secondary
-- Hero: animated radial gradient backdrop, profile-card intro instead of centered name
-- More rounded corners (`rounded-2xl` on cards)
-- Glassmorphism for nav + cards (`backdrop-blur`, `bg-paper/60`)
-- Bold accent gradients on CTAs
-
-### Sections — new v2 layout
-1. **Hero** — Profile-card intro: avatar left, name/role/tagline right, status badges, primary CTA. Animated gradient mesh behind.
-2. **About / Bio** — Short paragraph + skill chips. NEW.
-3. **Now** — Same as v1 but tighter, with neon "current focus" pill
-4. **Selected Work** — Project cards with live previews more prominent. "View live" CTA on every card.
-5. **How I work** — NEW. Horizontal 3–4 step process (e.g., research → design → build → ship).
-6. **Experience** — Same as v1
-7. **Activity** — Same as v1
-8. **Testimonials** — NEW. Optional — quotes from colleagues/clients.
-9. **Get in touch** — CTA section before footer.
-
-### New components for v2
-- `<ProfileCard>` — hero building block
-- `<GradientMesh>` — animated hero backdrop
-- `<SkillChip>` — pill-shaped skill indicator
-- `<StepProcess>` — horizontal steps with numbers + descriptions
-- `<TestimonialCard>` — quote card with attribution
-- `<CTABanner>` — large gradient CTA section
-
-### Plan execution
-- Keep both versions swappable: ship v1 as `main` branch, build v2 in a `v2` branch, demo side-by-side
-- OR replace v1 once v2 is approved
-- v2 keeps the same JSON schema — content swap is automatic
-
-**Open questions** (will resolve before building):
-1. Should v2 replace v1 or live alongside?
-2. Avatar: do you have one to use? (drop in `/public/avatar.jpg`)
-3. Testimonials: any quotes you want featured? Or skip?
-4. Default theme: dark or light? (Recommend dark for v2 to match reference)
-5. "How I work" steps: 3 or 4? What are they?
-6. Is the Solana/violet palette right or should we go elsewhere (electric blue? magenta? lime?)
+1. **Real content swap** — fill in `data/site.json`, `data/projects.json`, `data/experience.json`, `data/now.json` with the user's real data. JSON schema is documented in `docs/CONTENT.md`. This is the highest-impact next step.
+2. **Avatar** — drop at `/public/avatar.jpg` and add `"avatar": "/avatar.jpg"` to `data/site.json`. Currently unused.
+3. **OG image** — drop at `/public/og.png` and add `"ogImage": "/og.png"`. Currently static `themeColor` only.
+4. **Real GitHub activity** — swap the loader in `lib/activity.ts` to fetch from `https://github-contributions-api.jogruber.de/v4/{username}` (no auth). The component already accepts `ActivityData`.
+5. **Per-project detail routes** (`/projects/[slug]`) — schema supports them (`slug`, `description`, `gallery`) but home is currently the primary surface. Add when there's a project warranting a longer writeup.
+6. **Aesthetic refinements** — anything that comes up in review:
+   - Section vertical rhythm (currently `py-20/24/32`)
+   - Geometric accent size/opacity in hero (currently 420–520px @ 40% opacity)
+   - Display serif (Fraunces) vs other options — italic currently omitted due to next/font quirk
+   - Bohemian palette tones — could deepen or warm further
 
 ---
 
 ## Backlog — anytime
-- Per-project detail routes (`/projects/[slug]`) — schema supports it
-- Per-project image gallery in detail view
-- OG image generation via `opengraph-image.tsx` (dynamic from `now.json`)
 - RSS feed at `/feed.xml`
 - Sitemap entries per project
-- Avatar in hero + 404 page
-- Real GitHub activity fetch (1 server-side call per build)
 - Blog / writing section (MDX)
 - prefers-reduced-motion audit (already respects it; verify each motion component)
 - Lighthouse 95+ on all categories

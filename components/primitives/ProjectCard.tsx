@@ -1,4 +1,4 @@
-import type { Project } from "@/types/content";
+import type { Project, ProjectLink } from "@/types/content";
 import { Tag } from "./Tag";
 import { DateLabel } from "./DateLabel";
 import { ProjectHoverPreview } from "./ProjectHoverPreview";
@@ -7,7 +7,7 @@ interface ProjectCardProps {
   project: Project;
 }
 
-const LINK_LABEL: Record<string, string> = {
+const LINK_LABEL: Record<ProjectLink["kind"], string> = {
   live: "Live",
   github: "Source",
   writeup: "Writeup",
@@ -15,17 +15,26 @@ const LINK_LABEL: Record<string, string> = {
   docs: "Docs",
 };
 
+/**
+ * Unified project card — every project uses this same layout, regardless
+ * of importance. The hover preview (iframe if previewUrl, otherwise
+ * cover image) is applied identically via ProjectHoverPreview so all
+ * projects behave the same on hover.
+ */
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-      <div className="md:col-span-7">
-        <ProjectHoverPreview
-          project={project}
-          sizes="(min-width: 768px) 58vw, 100vw"
-        />
-      </div>
+    <article className="group flex flex-col gap-5">
+      <a
+        href={project.links[0]?.href ?? "#"}
+        target={project.links[0]?.href.startsWith("mailto:") ? undefined : "_blank"}
+        rel="noreferrer noopener"
+        className="block"
+        aria-label={`${project.title} — open ${LINK_LABEL[project.links[0]?.kind ?? "live"]}`}
+      >
+        <ProjectHoverPreview project={project} />
+      </a>
 
-      <div className="md:col-span-5 flex flex-col gap-6">
+      <div className="flex flex-col gap-3">
         <div className="flex items-baseline justify-between gap-4">
           <DateLabel>{project.year}</DateLabel>
           {project.status ? (
@@ -44,7 +53,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : null}
         </div>
 
-        <h3 className="font-display italic text-3xl md:text-4xl lg:text-5xl leading-[1.05] text-ink">
+        <h3 className="font-display italic text-2xl md:text-3xl leading-[1.1] text-ink">
           {project.title}
         </h3>
 
@@ -54,7 +63,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </DateLabel>
         ) : null}
 
-        <p className="text-base text-ink-2 max-w-[var(--container-prose)] leading-relaxed">
+        <p className="text-base text-ink-2 leading-relaxed">
           {project.summary}
         </p>
 
@@ -66,20 +75,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </ul>
 
-        <ul className="flex flex-wrap items-baseline gap-x-4 gap-y-1 pt-2">
-          {project.links.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="link-underline font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2 hover:text-neon"
-              >
-                ↗ {l.label ?? LINK_LABEL[l.kind] ?? l.kind}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {project.links.length > 0 ? (
+          <ul className="flex flex-wrap items-baseline gap-x-4 gap-y-1 pt-1">
+            {project.links.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-underline font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2 hover:text-neon"
+                >
+                  ↗ {l.label ?? LINK_LABEL[l.kind] ?? l.kind}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
     </article>
   );

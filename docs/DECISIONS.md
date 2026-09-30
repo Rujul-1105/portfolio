@@ -43,3 +43,11 @@ Format: `[YYYY-MM-DD] — decision — rationale`
 ## Hover preview — v1.2
 - **2026-09-30** — `ProjectHoverPreview` adds a hover overlay to the featured card. Decision: render a dark gradient overlay with title + CTA instead of an iframe by default — many production sites set `X-Frame-Options: DENY` which would just show a blank box. Iframe is opt-in via new `previewUrl` field.
 - **2026-09-30** — Compact rows get a left neon accent line on hover (scale-y origin top, 300ms) + visible ↗ + subtle background tint. Reads as "row is alive" without competing with the featured card.
+
+## Project uniformity — v1.3
+- **2026-10-01** — User feedback: "on hovering over the work projects they should display what will be loaded on the next page upon clicking them and there should be uniformity among all the projects." Decisions:
+  - **Drop the featured + compact split entirely.** Every project is rendered as the same `ProjectCard` in a 2-column grid. The `featured` flag becomes effectively unused (still in the schema, just not driving layout).
+  - **All projects use the same hover behavior** via the shared `ProjectHoverPreview` primitive. Hover fades the cover image down to 40% opacity and reveals the destination preview (iframe if `previewUrl` is set, otherwise the cover image itself fades). The dark gradient overlay with title + Visit CTA + secondary link chips appears on hover for every card.
+  - **Iframe previews on hover, sandboxed** — `sandbox="allow-scripts allow-same-origin allow-forms"`. `loading="lazy"` so it doesn't block initial render. `onError` falls back to the cover image, so sites that block iframe embedding (`X-Frame-Options: DENY`) gracefully degrade.
+  - **Removed `ProjectRow.tsx`** since it was no longer imported by any section. The compact-row layout was the source of the uniformity violation; deleting the file prevents accidental reintroduction.
+  - **Seeded `previewUrl` on all four placeholder projects** pointing to embeddable Wikipedia pages (Reading, Journal, Web_feed, Command-line_interface). This makes the hover-preview feature visible immediately without the user needing to fill in real content first. Real projects should override these with their actual deployment URLs.

@@ -1,41 +1,23 @@
 import { projectsSorted } from "@/lib/content";
 import { Section } from "@/components/primitives/Section";
 import { ProjectCard } from "@/components/primitives/ProjectCard";
-import { ProjectRow } from "@/components/primitives/ProjectRow";
-import { Rule } from "@/components/primitives/Rule";
 import { Reveal } from "@/components/motion/Reveal";
-import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 export function ProjectsSection() {
-  const featured = projectsSorted.find((p) => p.featured);
-  const rest = projectsSorted.filter((p) => p.slug !== featured?.slug);
-
   return (
     <Section
       id="work"
-      index="02"
+      index="01"
       title="Selected Work"
       meta={`${projectsSorted.length} projects`}
     >
-      {featured ? (
-        <Reveal>
-          <ProjectCard project={featured} />
-        </Reveal>
-      ) : null}
-
-      {rest.length > 0 ? (
-        <div className="mt-10 md:mt-12">
-          <Rule />
-          <Stagger>
-            {rest.map((p) => (
-              <StaggerItem key={p.slug}>
-                <ProjectRow project={p} />
-              </StaggerItem>
-            ))}
-          </Stagger>
-          <Rule />
+      <Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
+          {projectsSorted.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
         </div>
-      ) : null}
+      </Reveal>
     </Section>
   );
 }
