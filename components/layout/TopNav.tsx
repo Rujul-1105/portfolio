@@ -5,43 +5,58 @@ export function TopNav() {
   const twitterHref = site.twitter ?? "#";
 
   return (
-    <header className="sticky top-3 z-30 px-4 md:px-6">
-      <nav className="glass mx-auto flex w-full max-w-[var(--container-wide)] items-baseline justify-between gap-6 px-5 md:px-7 py-4 rounded-[var(--radius-card)]">
+    <header className="sticky top-0 z-30 bg-paper border-b border-line">
+      <nav className="mx-auto flex w-full max-w-[var(--container-wide)] items-center justify-between gap-6 px-6 md:px-10 lg:px-16 py-5">
         <a
           href="#top"
-          className="group flex items-baseline gap-2"
+          className="group flex items-center gap-2"
           aria-label="Home"
         >
-          <span aria-hidden className="status-dot" />
-          <span className="font-bold text-base tracking-[-0.03em] text-ink group-hover:text-violet transition-colors">
-            {site.name}
-          </span>
-          <a
-            href={twitterHref}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="link-underline font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] text-muted hover:text-violet"
-            aria-label={`${site.handle} on X / Twitter`}
+          <span
+            aria-hidden
+            className="font-mono text-accent text-base leading-none"
           >
-            {site.handle}
-          </a>
+            ▙▟
+          </span>
+          <span className="font-display text-base text-ink group-hover:text-accent transition-colors">
+            {site.handle.replace("@", "")}
+            <span className="text-accent">.</span>
+          </span>
         </a>
 
-        <ul className="flex items-baseline gap-x-4 md:gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[var(--tracking-caps)]">
+        <ul className="hidden md:flex items-center gap-x-6 font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2">
           {site.nav.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
-                className="link-underline text-ink-2 hover-glow"
+                className="link-underline hover-glow"
               >
                 {item.label}
               </a>
             </li>
           ))}
-          <li className="ml-1 border-l border-line pl-4 md:pl-6">
-            <ThemeToggle />
+          <li>
+            <a
+              href={twitterHref}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="link-underline hover-glow"
+              aria-label="Twitter / X"
+            >
+              Twitter
+            </a>
           </li>
         </ul>
+
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <a
+            href={`mailto:${site.email}`}
+            className="bracket-corners inline-flex items-center gap-2 bg-accent text-paper font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] px-4 py-2 hover:bg-accent-bright transition-colors"
+          >
+            Get in touch ↗
+          </a>
+        </div>
       </nav>
     </header>
   );

@@ -1,62 +1,117 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { StepProcess } from "@/components/decor/StepProcess";
+import { SectionCorners } from "@/components/decor/SectionCorners";
 
 const STEPS = [
   {
     number: "01",
-    icon: "◇",
+    icon: "◴",
     title: "Listen",
-    body: "I start by reading the room — your codebase, your users, your constraints. No pitch before I've understood the problem.",
+    body: "Read the codebase, sit with the team, understand what success actually looks like before pitching anything.",
   },
   {
     number: "02",
-    icon: "○",
+    icon: "◳",
     title: "Sketch",
-    body: "Quick, ugly prototypes in Figma or on paper. I share them early so we can disagree about shape before anything is built.",
+    body: "Quick, low-fidelity prototypes. We disagree about shape before any code is written.",
   },
   {
     number: "03",
-    icon: "△",
+    icon: "◰",
     title: "Build",
-    body: "Tight, fast iterations. Real code on real URLs by day three. If something isn't working, we throw it out and try again.",
+    body: "Tight iterations on a real URL. Real users from day one. Throwing things out fast when they don't work.",
   },
   {
     number: "04",
-    icon: "□",
+    icon: "◉",
     title: "Ship",
-    body: "I don't disappear after launch. I measure, I patch, I sit with the thing until it actually works for the people using it.",
+    body: "I don't disappear after launch. Measure, patch, stay with the thing until it works for the people using it.",
   },
 ];
 
+function ProcessIcon({ glyph }: { glyph: string }) {
+  return (
+    <div className="bracket-corners relative inline-flex h-14 w-14 items-center justify-center bg-paper text-accent">
+      <span className="font-mono text-2xl leading-none">{glyph}</span>
+    </div>
+  );
+}
+
 export function HowIWorkSection() {
   return (
-    <section
-      id="how"
-      className="relative py-20 md:py-28 lg:py-32 scroll-mt-24"
-    >
+    <section id="how" className="relative py-20 md:py-28 lg:py-32 scroll-mt-24">
       <div className="mx-auto w-full max-w-[var(--container-wide)] px-6 md:px-10 lg:px-16">
-        <Reveal>
-          <header className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-8 gap-y-2 items-baseline border-t border-line pt-6">
-            <p className="flex items-baseline gap-3">
-              <span className="font-mono text-base md:text-lg tracking-[var(--tracking-mono)] text-ink hover-glow cursor-default">
-                04
-              </span>
-              <span aria-hidden className="font-mono text-line">
-                —
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2">
-                How I work
-              </span>
-            </p>
-            <p className="font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-muted lg:justify-self-end">
-              The loop
-            </p>
-          </header>
-        </Reveal>
+        <SectionCorners />
 
         <Reveal>
-          <div className="mt-10 md:mt-12">
-            <StepProcess steps={STEPS} />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-4 items-baseline">
+            <p className="md:col-span-3 terminal">{"// How I work"}</p>
+            <div className="md:col-span-9">
+              <h2 className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.0] tracking-[-0.03em] text-ink max-w-[var(--container-prose)]">
+                From problem
+                <br />
+                to placement<span className="dot-red" />
+              </h2>
+              <p className="mt-6 font-mono text-sm uppercase tracking-[var(--tracking-caps)] text-muted">
+                A guided path for the work
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Mobile: stacked with arrows between. Desktop: horizontal with arrows between. */}
+        <Reveal>
+          <div className="mt-12 md:mt-20">
+            {/* Mobile/tablet */}
+            <div className="flex flex-col gap-4 md:hidden">
+              {STEPS.map((step, i) => (
+                <div key={step.number} className="flex flex-col gap-4">
+                  <div className="flex items-start gap-4">
+                    <ProcessIcon glyph={step.icon} />
+                    <div className="flex-1 flex flex-col gap-2">
+                      <span className="font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] text-accent">
+                        {step.number}
+                      </span>
+                      <h3 className="font-display text-xl text-ink">
+                        {step.title}
+                      </h3>
+                      <p className="font-mono text-sm text-ink-2 leading-relaxed">
+                        {step.body}
+                      </p>
+                    </div>
+                  </div>
+                  {i < STEPS.length - 1 ? (
+                    <div className="ml-7 font-mono text-accent">↓</div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop horizontal flow */}
+            <div className="hidden md:block">
+              <div className="flex items-start gap-0">
+                {STEPS.map((step, i) => (
+                  <div key={step.number} className="flex items-start flex-1">
+                    <div className="flex flex-col gap-4 flex-1">
+                      <ProcessIcon glyph={step.icon} />
+                      <span className="font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] text-accent">
+                        {step.number}
+                      </span>
+                      <h3 className="font-display text-xl text-ink leading-[1.1]">
+                        {step.title}
+                      </h3>
+                      <p className="font-mono text-sm text-ink-2 leading-relaxed max-w-[14rem]">
+                        {step.body}
+                      </p>
+                    </div>
+                    {i < STEPS.length - 1 ? (
+                      <div className="flex items-center justify-center w-12 text-accent font-mono text-2xl pt-6">
+                        →
+                      </div>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>

@@ -1,40 +1,28 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
-/* Dark mode — class-based variant. Default for v2.                            */
+/* Dark mode — class-based variant. v2 defaults to dark (no class needed).    */
 /* -------------------------------------------------------------------------- */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* -------------------------------------------------------------------------- */
-/* Design tokens — v2 Deep Violet palette                                     */
+/* Design tokens — v2.1: Black + Red (Superteam Talent aesthetic)            */
 /* -------------------------------------------------------------------------- */
 @theme {
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --font-bold: var(--font-bold);
 
-  /* Light paper — barely-tinted lavender */
-  --color-paper: #f5f0fa;
-  --color-paper-2: #ebe3f3;
-  --color-ink: #1a1033;
-  --color-ink-2: #443866;
-  --color-muted: #8478a0;
-  --color-line: #d9cfe8;
-  --color-accent: #7c3aed;
+  /* Light fallback (rare — dark is the default and intended use) */
+  --color-paper: #0a0a0a;
+  --color-paper-2: #141414;
+  --color-ink: #f5f5f5;
+  --color-ink-2: #a3a3a3;
+  --color-muted: #666666;
+  --color-line: #2a2a2a;
+  --color-accent: #ff3a1f;
 
-  /* v2 secondary tones */
-  --color-violet: #a855f7;
-  --color-violet-bright: #c084fc;
-  --color-violet-soft: rgba(168, 85, 247, 0.18);
-  --color-lime: #84cc16;
-  --color-lime-bright: #a3e635;
-
-  /* Glass surfaces — used on nav + cards */
-  --color-glass: rgba(255, 255, 255, 0.6);
-  --color-glass-border: rgba(255, 255, 255, 0.4);
-
-  --tracking-display: -0.025em;
+  --tracking-display: -0.02em;
   --tracking-mono: 0.04em;
   --tracking-caps: 0.16em;
 
@@ -42,75 +30,56 @@
   --container-page: 72rem;
   --container-wide: 84rem;
 
-  --spacing-section: 6rem;
-
-  --radius-card: 1.25rem;
-  --radius-pill: 9999px;
+  --spacing-section: 5rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Dark palette — the v2 default                                              */
+/* Dark palette — v2.1 default                                               */
 /* -------------------------------------------------------------------------- */
 :root {
-  /* Default to dark in v2 — applies before hydration via the theme script. */
-  --color-paper: #11091f;
-  --color-paper-2: #1a1130;
-  --color-ink: #f5edff;
-  --color-ink-2: #c9bce6;
-  --color-muted: #8478a0;
-  --color-line: #2a1f47;
-  --color-accent: #a855f7;
+  --color-paper: #000000;
+  --color-paper-2: #0d0d0d;
+  --color-ink: #f5f5f5;
+  --color-ink-2: #a3a3a3;
+  --color-muted: #666666;
+  --color-line: #2a2a2a;
+  --color-accent: #ff3a1f;
+  --color-accent-dim: #b8291a;
+  --color-accent-bright: #ff5c3c;
 
-  --color-violet: #c084fc;
-  --color-violet-bright: #d8b4fe;
-  --color-violet-soft: rgba(192, 132, 252, 0.22);
-  --color-lime: #a3e635;
-  --color-lime-bright: #d9f99d;
+  /* Alias for primitives shared with v1 (text-neon → red here) */
+  --color-neon: #ff3a1f;
+  --color-neon-bright: #ff5c3c;
+  --color-neon-soft: rgba(255, 58, 31, 0.22);
 
-  --color-glass: rgba(26, 17, 48, 0.55);
-  --color-glass-border: rgba(192, 132, 252, 0.18);
-
-  /* Aliases for primitives shared with v1 (text-neon → lime pop here) */
-  --color-neon: #a3e635;
-  --color-neon-bright: #d9f99d;
-  --color-neon-soft: rgba(163, 230, 53, 0.22);
-
-  --color-act-0: #1a1130;
-  --color-act-1: #2d1f5e;
-  --color-act-2: #5b21b6;
-  --color-act-3: #a855f7;
-  --color-act-4: #d8b4fe;
+  /* Activity palette tuned for red accent */
+  --color-act-0: #0d0d0d;
+  --color-act-1: #2a0a05;
+  --color-act-2: #5c150a;
+  --color-act-3: #b8291a;
+  --color-act-4: #ff3a1f;
 
   color-scheme: dark;
 }
 
 :root.light {
-  --color-paper: #f5f0fa;
-  --color-paper-2: #ebe3f3;
-  --color-ink: #1a1033;
-  --color-ink-2: #443866;
-  --color-muted: #8478a0;
-  --color-line: #d9cfe8;
-  --color-accent: #7c3aed;
+  --color-paper: #f5f5f5;
+  --color-paper-2: #ebebeb;
+  --color-ink: #0a0a0a;
+  --color-ink-2: #4a4a4a;
+  --color-muted: #888888;
+  --color-line: #d8d8d8;
+  --color-accent: #cc2e18;
 
-  --color-violet: #a855f7;
-  --color-violet-bright: #c084fc;
-  --color-violet-soft: rgba(168, 85, 247, 0.18);
-  --color-lime: #65a30d;
-  --color-lime-bright: #84cc16;
+  --color-neon: #cc2e18;
+  --color-neon-bright: #ff3a1f;
+  --color-neon-soft: rgba(204, 46, 24, 0.18);
 
-  --color-glass: rgba(255, 255, 255, 0.6);
-  --color-glass-border: rgba(124, 58, 237, 0.18);
-
-  --color-neon: #65a30d;
-  --color-neon-bright: #84cc16;
-  --color-neon-soft: rgba(101, 163, 13, 0.18);
-
-  --color-act-0: #ebe3f3;
-  --color-act-1: #c4b5fd;
-  --color-act-2: #a78bfa;
-  --color-act-3: #7c3aed;
-  --color-act-4: #5b21b6;
+  --color-act-0: #ebebeb;
+  --color-act-1: #f4a89a;
+  --color-act-2: #e8694e;
+  --color-act-3: #cc2e18;
+  --color-act-4: #8c1e10;
 
   color-scheme: light;
 }
@@ -132,11 +101,12 @@ body {
   background-color: var(--color-paper);
   color: var(--color-ink);
   min-height: 100dvh;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
   transition: background-color 400ms ease, color 400ms ease;
 }
 
 ::selection {
-  background-color: var(--color-violet);
+  background-color: var(--color-accent);
   color: var(--color-paper);
 }
 
@@ -144,13 +114,9 @@ body {
 /* Typography helpers                                                         */
 /* -------------------------------------------------------------------------- */
 .font-display {
-  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   letter-spacing: var(--tracking-display);
-}
-
-.font-bold {
-  font-family: var(--font-bold), var(--font-display), ui-serif, Georgia, serif;
-  letter-spacing: -0.03em;
+  font-weight: 500;
 }
 
 .font-mono {
@@ -178,91 +144,112 @@ body {
   background-size: 100% 1px;
 }
 
-.glass {
-  background-color: var(--color-glass);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid var(--color-glass-border);
-}
-
 *:focus-visible {
-  outline: 2px solid var(--color-violet);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* -------------------------------------------------------------------------- */
-/* v2 accents                                                                 */
+/* v2.1 accents                                                               */
 /* -------------------------------------------------------------------------- */
 
-.text-violet { color: var(--color-violet); }
-.bg-violet { background-color: var(--color-violet); }
+.text-red { color: var(--color-accent); }
+.bg-red { background-color: var(--color-accent); }
+.border-red { border-color: var(--color-accent); }
 
-.text-lime { color: var(--color-lime); }
-.bg-lime { background-color: var(--color-lime); }
-
-.glow-violet {
-  text-shadow:
-    0 0 1px var(--color-violet-bright),
-    0 0 24px var(--color-violet-soft);
+/* Corner brackets — used on buttons, active states, section markers */
+.bracket-corners {
+  position: relative;
+}
+.bracket-corners::before,
+.bracket-corners::after,
+.bracket-corners > .bracket-tl,
+.bracket-corners > .bracket-br {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--color-accent);
+  pointer-events: none;
+}
+.bracket-corners::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+.bracket-corners::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
 }
 
-.hover-glow {
-  transition:
-    text-shadow 220ms ease,
-    color 220ms ease;
+/* Crosshair markers — used at section corners */
+.crosshair {
+  position: relative;
+}
+.crosshair::before {
+  content: "+";
+  position: absolute;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  pointer-events: none;
 }
 
-.hover-glow:hover {
-  text-shadow: 0 0 16px var(--color-violet-soft);
-  color: var(--color-violet);
+/* Red dot/period at end of headlines — the signature accent */
+.dot-red::after {
+  content: ".";
+  color: var(--color-accent);
 }
 
-/* Link that glows on hover with violet underline */
-.link-violet {
-  background-image: linear-gradient(var(--color-violet), var(--color-violet));
-  background-size: 0% 1px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 220ms ease;
-}
-
-.link-violet:hover {
-  background-size: 100% 1px;
-  color: var(--color-violet);
-}
-
-/* Terminal-style mono labels with `›` chevron */
+/* Terminal mono labels */
 .terminal {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-accent);
 }
 
 .terminal-prompt::before {
   content: "›";
   margin-right: 0.5rem;
-  color: var(--color-violet);
+  color: var(--color-accent);
 }
 
-/* Status dot with violet pulse */
+/* Hover glow for red accent */
+.hover-glow {
+  transition:
+    color 220ms ease,
+    text-shadow 220ms ease;
+}
+
+.hover-glow:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 14px var(--color-neon-soft);
+}
+
+/* Status dot — red pulsing */
 .status-dot {
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: var(--color-lime);
-  box-shadow: 0 0 0 0 var(--color-lime);
+  background-color: var(--color-accent);
+  box-shadow: 0 0 0 0 var(--color-accent);
   animation: pulse-dot 2.4s ease-out infinite;
   vertical-align: middle;
 }
 
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 var(--color-lime); opacity: 1; }
-  70% { box-shadow: 0 0 0 10px transparent; opacity: 0.7; }
-  100% { box-shadow: 0 0 0 0 transparent; opacity: 1; }
+  0% { box-shadow: 0 0 0 0 var(--color-neon-soft); }
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
 @keyframes terminal-blink {
@@ -272,42 +259,58 @@ body {
 
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -10px, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
 }
 
 .drift {
   animation: drift 9s ease-in-out infinite;
 }
 
-@keyframes slow-rotate {
-  to { transform: rotate(360deg); }
+/* Vertical text-rain background — column of red Asian characters */
+@keyframes rain-fall {
+  0% { transform: translate3d(0, -100%, 0); }
+  100% { transform: translate3d(0, 100vh, 0); }
 }
 
-.slow-rotate {
-  animation: slow-rotate 80s linear infinite;
-  transform-origin: 50% 50%;
+.text-rain-col {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  opacity: 0.16;
+  font-size: 14px;
+  user-select: none;
 }
 
-@keyframes mesh-shift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate3d(-2%, 1%, 0) scale(1.06);
-    opacity: 1;
-  }
+/* Slow scroll-in for hero text-rain columns */
+@keyframes rain-on {
+  0%, 100% { transform: translate3d(0, -2%, 0); }
+  50% { transform: translate3d(0, 2%, 0); }
 }
 
-.mesh-blob {
-  animation: mesh-shift 18s ease-in-out infinite;
-}
-
-/* Vignette for hero backgrounds */
+/* Vignette mask */
 .fade-edge {
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
+
+/* Grid frame around sections */
+.section-frame {
+  position: relative;
+}
+.section-frame::before,
+.section-frame::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-line);
+  pointer-events: none;
+}
+.section-frame::before { top: 0; }
+.section-frame::after { bottom: 0; }
 
 /* -------------------------------------------------------------------------- */
 /* Motion preferences                                                         */

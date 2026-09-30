@@ -52,3 +52,19 @@ Format: `[YYYY-MM-DD] — decision — rationale`
 - **2026-09-30** — `--color-neon` aliased to `--color-lime` in v2 globals.css so primitives shared with v1 (ProjectRow hover arrow, ExperienceRow present indicator) work in both versions without duplication.
 - **2026-09-30** — v1 home moved to `/v1` route group (`app/v1/page.tsx` + `app/v1/globals.css` + `app/v1/layout.tsx`). v1 retains its bohemian palette on that path; v2 is the new default at `/`.
 - **2026-09-30** — Default theme flipped to dark (was light in v1). `themeScript` now adds `.light` for light mode instead of `.dark` for dark — `.light` class opt-in means "no class" = dark, which matches the v2 default.
+
+## Aesthetic — v2.1 (this iteration, after "your v2 is trash")
+- **2026-10-01** — **Major rework** of v2 because the v2.0 design was generic and didn't match the actual superteam.fun aesthetic. Decisions made after studying the real reference:
+  - **Palette**: dropped violet/lime entirely. New palette is pure black `#000000` paper with electric red `#ff3a1f` accent. Black + red is the entire visual identity — no gradients on backgrounds, no glassmorphism, no purple tints.
+  - **Fonts**: dropped Boldonse (display) and Fraunces (serif). Now only two fonts — **Inter** for headlines (display sans, geometric) and **JetBrains Mono** for everything else (body, labels, eyebrows, subheads, CTAs). Mono-everywhere is the superteam signature.
+  - **Body font default**: `body { font-family: var(--font-mono) }` — the page reads as a developer product, not a magazine.
+  - **Hero**: completely redesigned. Centered massive headline (clamp 3.5rem–9rem), `// Powered by · {role}` eyebrow above, mono subhead below, two `BracketButton` CTAs side by side. Background is `TextRain` — 14 vertical columns of red Asian characters (katakana + kanji + portfolio-relevant English words) tilted -3°, slowly drifting via `rain-on` keyframes, with a radial vignette over the middle so the headline stays legible.
+  - **`.dot-red` utility**: every section headline ends with a literal red period. This is the single most distinctive visual element of the reference and is now used everywhere.
+  - **`bracket-corners` utility + `<BracketButton>`**: corner-bracket pseudo-elements on buttons and section frames — rendered via CSS so any element gets them for free.
+  - **`<SectionCorners>`**: crosshair `+` markers at the four corners of every section. Sits as an absolute-positioned overlay, purely decorative.
+  - **About → "What I do"**: 4-feature grid (Build / Design / Lead / Ship) with `gap-px bg-line` to give a tight grid feel; one card highlighted in red.
+  - **Process flow**: was 4 cards in a grid, now a horizontal flow with `→` arrows between steps, each step has a `bracket-corners` icon container.
+  - **Footer**: 3-column grid (Site / Find me / Subscribe — subscribe is a `mailto:` link with corner brackets instead of a real form, to avoid the Server-Component-onSubmit issue). Massive dotted name wordmark at the bottom using `background-image: radial-gradient(circle, red 1.2px, transparent 1.6px); background-size: 6px 6px; -webkit-background-clip: text` — renders the name in red dot pattern.
+  - **`--color-neon` aliased to `--color-accent` (red)** so shared primitives (ProjectRow hover arrow, ExperienceRow present indicator) pick up red instead of lime.
+  - **Section eyebrow**: every section starts with `// Section Name` in red mono caps — direct lift from the reference.
+  - **Hero copy**: changed from "Your Name" placeholder to "The quiet layer of software" — generic enough for placeholder, evocative enough to show off the typographic moment.
