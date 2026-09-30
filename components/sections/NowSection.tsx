@@ -12,7 +12,7 @@ export function NowSection() {
   return (
     <Section
       id="now"
-      index="01"
+      index="02"
       title="Now"
       meta={updatedLabel}
     >

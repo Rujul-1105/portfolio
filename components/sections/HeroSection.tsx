@@ -16,21 +16,21 @@ export function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden min-h-[90vh] flex flex-col justify-end pt-24 md:pt-32 pb-16 md:pb-24"
+      className="relative overflow-hidden min-h-[70vh] md:min-h-[90vh] flex flex-col justify-end pt-20 md:pt-32 pb-12 md:pb-24"
     >
       {/* Backdrop layers */}
       <div className="absolute inset-0 fade-edge">
-        <GridPattern size={32} opacity={0.4} />
+        <GridPattern size={32} opacity={0.3} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[18%] -top-[12%] w-[420px] md:w-[520px] text-line/40 drift slow-rotate"
+        className="pointer-events-none absolute -right-[24%] -top-[10%] w-[280px] md:w-[520px] text-line/30 md:text-line/40 drift slow-rotate"
       >
         <GeometricAccent variant="ring" strokeWidth={1} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-[12%] bottom-[2%] w-[280px] md:w-[360px] text-line/30 drift"
+        className="pointer-events-none absolute -left-[20%] bottom-[2%] w-[200px] md:w-[360px] text-line/20 md:text-line/30 drift"
         style={{ animationDelay: "2.4s" }}
       >
         <GeometricAccent variant="arc" strokeWidth={1} />

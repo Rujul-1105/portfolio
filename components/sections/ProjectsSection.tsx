@@ -7,7 +7,7 @@ export function ProjectsSection() {
   return (
     <Section
       id="work"
-      index="01"
+      index="04"
       title="Selected Work"
       meta={`${projectsSorted.length} projects`}
     >

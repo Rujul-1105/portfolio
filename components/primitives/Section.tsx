@@ -25,7 +25,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative py-20 md:py-24 lg:py-32 scroll-mt-24 ${className ?? ""}`}
+      className={`relative py-16 md:py-24 lg:py-32 scroll-mt-20 md:scroll-mt-24 ${className ?? ""}`}
     >
       <div className="mx-auto w-full max-w-[var(--container-wide)] px-6 md:px-10 lg:px-16">
         <header className="group grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-x-8 gap-y-2 items-baseline border-t border-line pt-6">

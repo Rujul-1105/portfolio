@@ -14,7 +14,7 @@ export function ActivitySection() {
   return (
     <Section
       id="activity"
-      index="04"
+      index="05"
       title="Activity"
       meta="Last 365 days"
     >
