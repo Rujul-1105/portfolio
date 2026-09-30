@@ -1,0 +1,89 @@
+{
+  "projects": [
+    {
+      "slug": "scout",
+      "title": "Scout",
+      "year": "2025",
+      "summary": "A reading list that thinks with you. Capture, annotate, and return to the ideas that shaped your work.",
+      "description": "Scout is a personal reading companion built around the way people actually return to books, articles, and notes. It captures links from anywhere, syncs highlights, and surfaces the connections between what you read. Built solo over six months.",
+      "role": "Solo build",
+      "stack": ["TypeScript", "Next.js", "Postgres", "Rust"],
+      "links": [
+        { "kind": "live", "href": "https://example.com/scout" },
+        { "kind": "github", "href": "https://github.com/yourhandle/scout" }
+      ],
+      "cover": {
+        "src": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&h=1067&fit=crop",
+        "alt": "An open notebook on a wooden desk beside a ceramic mug.",
+        "width": 1600,
+        "height": 1067,
+        "aspect": "3/2"
+      },
+      "featured": true,
+      "status": "shipped"
+    },
+    {
+      "slug": "fieldnotes",
+      "title": "Fieldnotes",
+      "year": "2025",
+      "summary": "A tiny journal app that nudges you to write one paragraph a day.",
+      "description": "Fieldnotes strips journaling back to its essentials: one paragraph, written daily, stored locally. No accounts, no syncing, no streaks. Just a quiet place to land at the end of the day.",
+      "role": "Solo build",
+      "stack": ["Swift", "SwiftUI", "SQLite"],
+      "links": [
+        { "kind": "live", "href": "https://example.com/fieldnotes" }
+      ],
+      "cover": {
+        "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1600&h=1067&fit=crop",
+        "alt": "A worn leather journal opened to a blank page.",
+        "width": 1600,
+        "height": 1067,
+        "aspect": "3/2"
+      },
+      "status": "shipped"
+    },
+    {
+      "slug": "compass",
+      "title": "Compass",
+      "year": "2024",
+      "summary": "An opinionated map of the modern web — curated feeds, slow delivery, no metrics.",
+      "description": "Compass is a reader that treats the feed as a magazine, not a stream. Editors pick the week's reading, you receive it on a schedule, and the count never moves. Built with a small team of three.",
+      "role": "Co-founder, engineering",
+      "stack": ["Elixir", "Phoenix", "Postgres", "TypeScript"],
+      "links": [
+        { "kind": "live", "href": "https://example.com/compass" },
+        { "kind": "github", "href": "https://github.com/yourhandle/compass" },
+        { "kind": "writeup", "href": "https://example.com/compass/notes" }
+      ],
+      "cover": {
+        "src": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1600&h=1067&fit=crop",
+        "alt": "A vintage brass compass resting on a folded map.",
+        "width": 1600,
+        "height": 1067,
+        "aspect": "3/2"
+      },
+      "status": "archived"
+    },
+    {
+      "slug": "ledger",
+      "title": "Ledger",
+      "year": "2024",
+      "summary": "A command-line tool for tracking what you read, watch, and build — without leaving the terminal.",
+      "description": "Ledger is a 4KB binary you pipe things into. Over time it builds a quiet record of your interests. Export to JSON, Markdown, or a static site whenever you're ready.",
+      "role": "Solo build",
+      "stack": ["Go", "SQLite"],
+      "links": [
+        { "kind": "github", "href": "https://github.com/yourhandle/ledger" },
+        { "kind": "docs", "href": "https://example.com/ledger" }
+      ],
+      "cover": {
+        "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1600&h=1067&fit=crop",
+        "alt": "Code on a dark terminal screen, softly lit.",
+        "width": 1600,
+        "height": 1067,
+        "aspect": "3/2"
+      },
+      "status": "shipped"
+    }
+  ]
+}

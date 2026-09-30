@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------- */
+/* Dark mode — class-based variant so :root.dark toggles automatically.       */
+/* -------------------------------------------------------------------------- */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* -------------------------------------------------------------------------- */
+/* Design tokens                                                              */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-bold: var(--font-bold);
+
+  --color-paper: #efe5d2;
+  --color-paper-2: #e3d6bd;
+  --color-ink: #2a1f17;
+  --color-ink-2: #5a4a3a;
+  --color-muted: #8b7763;
+  --color-line: #cdbf9f;
+  --color-accent: #a8431f;
+
+  /* Bohemian secondary tones */
+  --color-clay: #c87a4a;
+  --color-sage: #6b7d52;
+  --color-rose: #b87a6e;
+
+  /* Cyber accent — the neon pop on top of warm paper */
+  --color-neon: #2f7a3a;
+  --color-neon-bright: #3da14c;
+  --color-neon-soft: rgba(61, 161, 76, 0.22);
+
+  /* GitHub activity palette — tuned to design */
+  --color-act-0: #d8c9a5;
+  --color-act-1: #b6cf90;
+  --color-act-2: #87b260;
+  --color-act-3: #4f8c3f;
+  --color-act-4: #2f7a3a;
+
+  --tracking-display: -0.025em;
+  --tracking-mono: 0.04em;
+  --tracking-caps: 0.16em;
+
+  --container-prose: 38rem;
+  --container-page: 72rem;
+  --container-wide: 84rem;
+
+  --spacing-section: 8rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Dark palette — overrides via class on <html>                               */
+/* -------------------------------------------------------------------------- */
+:root.dark {
+  --color-paper: #15110d;
+  --color-paper-2: #1e1812;
+  --color-ink: #f0e6d2;
+  --color-ink-2: #c2b59d;
+  --color-muted: #7d6e5a;
+  --color-line: #2e271d;
+  --color-accent: #d97a4a;
+
+  --color-clay: #e89469;
+  --color-sage: #9bb079;
+  --color-rose: #d99b8a;
+
+  --color-neon: #4dff8c;
+  --color-neon-bright: #6effa3;
+  --color-neon-soft: rgba(77, 255, 140, 0.18);
+
+  --color-act-0: #1e1812;
+  --color-act-1: #1f3d24;
+  --color-act-2: #2a6b35;
+  --color-act-3: #3da14c;
+  --color-act-4: #6effa3;
+
+  color-scheme: dark;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base                                                                       */
+/* -------------------------------------------------------------------------- */
+html {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  min-height: 100dvh;
+  transition: background-color 400ms ease, color 400ms ease;
+}
+
+::selection {
+  background-color: var(--color-neon);
+  color: var(--color-paper);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Editorial typography primitives                                            */
+/* -------------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  letter-spacing: var(--tracking-display);
+}
+
+.font-bold {
+  font-family: var(--font-bold), var(--font-display), ui-serif, Georgia, serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Hairline that respects the line color token */
+.rule {
+  height: 1px;
+  background-color: var(--color-line);
+  width: 100%;
+}
+
+/* Subtle text-link underline that draws in */
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 220ms ease;
+}
+
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+/* Focus ring that doesn't fight the design */
+*:focus-visible {
+  outline: 2px solid var(--color-neon);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Cyber accents                                                              */
+/* -------------------------------------------------------------------------- */
+
+/* Neon text — used for status indicators, hover accents, terminal labels */
+.text-neon {
+  color: var(--color-neon);
+}
+
+.bg-neon {
+  background-color: var(--color-neon);
+}
+
+/* Neon glow — applies a soft outer halo */
+.glow-neon {
+  text-shadow:
+    0 0 1px var(--color-neon-bright),
+    0 0 14px var(--color-neon-soft);
+}
+
+.dark .glow-neon {
+  text-shadow:
+    0 0 1px var(--color-neon-bright),
+    0 0 18px var(--color-neon-soft);
+}
+
+/* Hover glow — links and section numbers on hover */
+.hover-glow {
+  transition:
+    text-shadow 220ms ease,
+    color 220ms ease;
+}
+
+.hover-glow:hover {
+  text-shadow: 0 0 14px var(--color-neon-soft);
+  color: var(--color-neon);
+}
+
+/* Neon underline that glows */
+.link-neon {
+  background-image: linear-gradient(var(--color-neon), var(--color-neon));
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 220ms ease;
+}
+
+.link-neon:hover {
+  background-size: 100% 1px;
+  color: var(--color-neon);
+}
+
+/* Terminal-prompt styling — fixed-width mono with a leading chevron */
+.terminal {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.terminal-prompt::before {
+  content: "›";
+  margin-right: 0.5rem;
+  color: var(--color-neon);
+}
+
+/* Status dot — small neon circle with slow pulse */
+.status-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-neon);
+  box-shadow: 0 0 0 0 var(--color-neon);
+  animation: pulse-dot 2.4s ease-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 var(--color-neon-soft); }
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* Cursor blink */
+@keyframes terminal-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* Subtle vertical drift for floating accents */
+@keyframes drift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
+}
+
+.drift {
+  animation: drift 9s ease-in-out infinite;
+}
+
+/* Slow rotate for geometric accents */
+@keyframes slow-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.slow-rotate {
+  animation: slow-rotate 80s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* Scroll-driven fade for top-of-page accent */
+.fade-edge {
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Motion preferences                                                         */
+/* -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

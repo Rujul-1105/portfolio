@@ -1,0 +1,44 @@
+{
+  "experience": [
+    {
+      "company": "Independent",
+      "role": "Software engineer, freelance",
+      "start": "2025-03",
+      "end": "present",
+      "location": "Remote",
+      "summary": "Designing and shipping small, focused software for clients in publishing and education. Currently building Scout and Fieldnotes in the gaps.",
+      "highlights": [
+        "Shipped 3 production apps with sustained weekly active use",
+        "Replaced two client legacy backends with typed services"
+      ],
+      "stack": ["TypeScript", "Next.js", "Postgres", "Swift"],
+      "kind": "freelance"
+    },
+    {
+      "company": "Acme Inc.",
+      "role": "Senior software engineer",
+      "url": "https://example.com",
+      "start": "2022-07",
+      "end": "2025-02",
+      "location": "San Francisco, CA",
+      "summary": "Led the editor team for a writing product used by several hundred thousand people. Owned the document model end to end and shipped the realtime collaboration rewrite.",
+      "highlights": [
+        "Drove the migration to operational transforms — 4× faster conflict resolution",
+        "Built and mentored a team of four engineers",
+        "Reduced p95 editor latency from 380ms to 90ms"
+      ],
+      "stack": ["TypeScript", "React", "Go", "Postgres", "CRDTs"],
+      "kind": "work"
+    },
+    {
+      "company": "Meridian Labs",
+      "role": "Software engineer intern",
+      "start": "2021-06",
+      "end": "2021-09",
+      "location": "New York, NY",
+      "summary": "Built internal tooling for the data platform team. Shipped a CLI for managing dataset versioning that became the team's default.",
+      "stack": ["Python", "Click", "BigQuery"],
+      "kind": "internship"
+    }
+  ]
+}
