@@ -49,26 +49,26 @@ function MoonIcon() {
 }
 
 /**
- * Square icon button for theme toggle. Sun when in dark mode (click to go light),
- * moon when in light mode (click to go dark).
+ * Square icon button for theme toggle. Moon when in light mode (click to go dark),
+ * sun when in dark mode (click to go light).
  */
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const isDark = document.documentElement.classList.contains("dark");
-    setTheme(isDark ? "dark" : "light");
+    const isLight = document.documentElement.classList.contains("light");
+    setTheme(isLight ? "light" : "dark");
   }, []);
 
   function toggle() {
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
-    if (next === "dark") {
-      document.documentElement.classList.add("dark");
+    if (next === "light") {
+      document.documentElement.classList.add("light");
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("light");
     }
     try {
       localStorage.setItem("theme", next);
@@ -83,10 +83,10 @@ export function ThemeToggle() {
       <button
         type="button"
         aria-label="Toggle theme"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-line text-muted hover:text-ink hover:border-ink-2 transition-colors"
+        className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-line text-muted hover:text-neon hover:border-neon transition-colors"
         tabIndex={-1}
       >
-        <SunIcon />
+        <MoonIcon />
       </button>
     );
   }

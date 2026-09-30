@@ -1,43 +1,34 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
-/* Dark mode — class-based variant so :root.dark toggles automatically.       */
+/* Dark mode — class-based. v2.x defaults to DARK (no class needed).          */
 /* -------------------------------------------------------------------------- */
 @custom-variant dark (&:where(.dark, .dark *));
+@custom-variant light (&:where(.light, .light *));
 
 /* -------------------------------------------------------------------------- */
-/* Design tokens                                                              */
+/* Design tokens — Cyberscore: pure black paper + electric green accent       */
 /* -------------------------------------------------------------------------- */
 @theme {
   --font-display: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-bold: var(--font-bold);
+  --font-slab: var(--font-slab);
 
-  --color-paper: #efe5d2;
-  --color-paper-2: #e3d6bd;
-  --color-ink: #2a1f17;
-  --color-ink-2: #5a4a3a;
-  --color-muted: #8b7763;
-  --color-line: #cdbf9f;
-  --color-accent: #a8431f;
+  --color-paper: #050608;
+  --color-paper-2: #0a0d12;
+  --color-ink: #e8f0e8;
+  --color-ink-2: #a0a8a0;
+  --color-muted: #5a605a;
+  --color-line: #1a1f1a;
+  --color-accent: #00ff9d;
+  --color-accent-bright: #4dffba;
+  --color-accent-soft: rgba(0, 255, 157, 0.18);
 
-  /* Bohemian secondary tones */
-  --color-clay: #c87a4a;
-  --color-sage: #6b7d52;
-  --color-rose: #b87a6e;
-
-  /* Cyber accent — the neon pop on top of warm paper */
-  --color-neon: #2f7a3a;
-  --color-neon-bright: #3da14c;
-  --color-neon-soft: rgba(61, 161, 76, 0.22);
-
-  /* GitHub activity palette — tuned to design */
-  --color-act-0: #d8c9a5;
-  --color-act-1: #b6cf90;
-  --color-act-2: #87b260;
-  --color-act-3: #4f8c3f;
-  --color-act-4: #2f7a3a;
+  /* Cyber secondaries */
+  --color-magenta: #ff0080;
+  --color-cyan: #00d9ff;
 
   --tracking-display: -0.025em;
   --tracking-mono: 0.04em;
@@ -47,36 +38,63 @@
   --container-page: 72rem;
   --container-wide: 84rem;
 
-  --spacing-section: 8rem;
+  --spacing-section: 5rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Dark palette — overrides via class on <html>                               */
+/* Dark palette — v2.x default                                                */
 /* -------------------------------------------------------------------------- */
-:root.dark {
-  --color-paper: #15110d;
-  --color-paper-2: #1e1812;
-  --color-ink: #f0e6d2;
-  --color-ink-2: #c2b59d;
-  --color-muted: #7d6e5a;
-  --color-line: #2e271d;
-  --color-accent: #d97a4a;
+:root {
+  --color-paper: #050608;
+  --color-paper-2: #0a0d12;
+  --color-ink: #e8f0e8;
+  --color-ink-2: #a0a8a0;
+  --color-muted: #5a605a;
+  --color-line: #1a1f1a;
+  --color-accent: #00ff9d;
+  --color-accent-bright: #4dffba;
+  --color-accent-soft: rgba(0, 255, 157, 0.22);
 
-  --color-clay: #e89469;
-  --color-sage: #9bb079;
-  --color-rose: #d99b8a;
+  --color-magenta: #ff0080;
+  --color-cyan: #00d9ff;
 
-  --color-neon: #4dff8c;
-  --color-neon-bright: #6effa3;
-  --color-neon-soft: rgba(77, 255, 140, 0.18);
+  /* Aliases for primitives shared with v1 (text-neon → green here) */
+  --color-neon: #00ff9d;
+  --color-neon-bright: #4dffba;
+  --color-neon-soft: rgba(0, 255, 157, 0.22);
 
-  --color-act-0: #1e1812;
-  --color-act-1: #1f3d24;
-  --color-act-2: #2a6b35;
-  --color-act-3: #3da14c;
-  --color-act-4: #6effa3;
+  --color-act-0: #0a0d12;
+  --color-act-1: #122821;
+  --color-act-2: #1a4a35;
+  --color-act-3: #2a8550;
+  --color-act-4: #00ff9d;
 
   color-scheme: dark;
+}
+
+:root.light {
+  --color-paper: #f4f6f4;
+  --color-paper-2: #e8ece8;
+  --color-ink: #050608;
+  --color-ink-2: #2a3530;
+  --color-muted: #6a706a;
+  --color-line: #d4d8d4;
+  --color-accent: #00875a;
+
+  --color-magenta: #c91b6e;
+  --color-cyan: #0078a8;
+
+  --color-neon: #00875a;
+  --color-neon-bright: #00a872;
+  --color-neon-soft: rgba(0, 135, 90, 0.18);
+
+  --color-act-0: #e8ece8;
+  --color-act-1: #b6e0c5;
+  --color-act-2: #6fc28e;
+  --color-act-3: #2a8550;
+  --color-act-4: #00875a;
+
+  color-scheme: light;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -102,12 +120,12 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-neon);
+  background-color: var(--color-accent);
   color: var(--color-paper);
 }
 
 /* -------------------------------------------------------------------------- */
-/* Editorial typography primitives                                            */
+/* Typography helpers                                                         */
 /* -------------------------------------------------------------------------- */
 .font-display {
   font-family: var(--font-display), ui-serif, Georgia, serif;
@@ -128,14 +146,15 @@ body {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Hairline that respects the line color token */
+/* -------------------------------------------------------------------------- */
+/* Decorative primitives                                                      */
+/* -------------------------------------------------------------------------- */
 .rule {
   height: 1px;
   background-color: var(--color-line);
   width: 100%;
 }
 
-/* Subtle text-link underline that draws in */
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
@@ -148,37 +167,36 @@ body {
   background-size: 100% 1px;
 }
 
-/* Focus ring that doesn't fight the design */
 *:focus-visible {
-  outline: 2px solid var(--color-neon);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Cyber accents                                                              */
+/* Cyber accents                                                               */
 /* -------------------------------------------------------------------------- */
 
-/* Neon text — used for status indicators, hover accents, terminal labels */
-.text-neon {
-  color: var(--color-neon);
-}
+.text-neon { color: var(--color-neon); }
+.bg-neon { background-color: var(--color-neon); }
 
-.bg-neon {
-  background-color: var(--color-neon);
-}
+.text-magenta { color: var(--color-magenta); }
+.bg-magenta { background-color: var(--color-magenta); }
 
-/* Neon glow — applies a soft outer halo */
+.text-cyan { color: var(--color-cyan); }
+.bg-cyan { background-color: var(--color-cyan); }
+
+/* Neon glow — soft outer halo */
 .glow-neon {
   text-shadow:
     0 0 1px var(--color-neon-bright),
     0 0 14px var(--color-neon-soft);
 }
 
-.dark .glow-neon {
+.glow-magenta {
   text-shadow:
-    0 0 1px var(--color-neon-bright),
-    0 0 18px var(--color-neon-soft);
+    0 0 1px var(--color-magenta),
+    0 0 14px rgba(255, 0, 128, 0.18);
 }
 
 /* Hover glow — links and section numbers on hover */
@@ -189,8 +207,8 @@ body {
 }
 
 .hover-glow:hover {
-  text-shadow: 0 0 14px var(--color-neon-soft);
   color: var(--color-neon);
+  text-shadow: 0 0 14px var(--color-neon-soft);
 }
 
 /* Neon underline that glows */
@@ -207,13 +225,13 @@ body {
   color: var(--color-neon);
 }
 
-/* Terminal-prompt styling — fixed-width mono with a leading chevron */
+/* Terminal mono labels */
 .terminal {
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-neon);
 }
 
 .terminal-prompt::before {
@@ -222,7 +240,7 @@ body {
   color: var(--color-neon);
 }
 
-/* Status dot — small neon circle with slow pulse */
+/* Status dot — green pulsing */
 .status-dot {
   display: inline-block;
   width: 0.5rem;
@@ -236,17 +254,15 @@ body {
 
 @keyframes pulse-dot {
   0% { box-shadow: 0 0 0 0 var(--color-neon-soft); }
-  70% { box-shadow: 0 0 0 8px transparent; }
+  70% { box-shadow: 0 0 0 10px transparent; }
   100% { box-shadow: 0 0 0 0 transparent; }
 }
 
-/* Cursor blink */
 @keyframes terminal-blink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
 }
 
-/* Subtle vertical drift for floating accents */
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0); }
   50% { transform: translate3d(0, -8px, 0); }
@@ -256,7 +272,6 @@ body {
   animation: drift 9s ease-in-out infinite;
 }
 
-/* Slow rotate for geometric accents */
 @keyframes slow-rotate {
   to { transform: rotate(360deg); }
 }
@@ -266,7 +281,101 @@ body {
   transform-origin: 50% 50%;
 }
 
-/* Scroll-driven fade for top-of-page accent */
+@keyframes glitch-x {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-1px); }
+  40% { transform: translateX(1px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(0, 255, 157, 0.025) 3px,
+    rgba(0, 255, 157, 0.025) 4px
+  );
+  mix-blend-mode: overlay;
+}
+
+.scanline-sweep {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.scanline-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 157, 0.08) 50%,
+    transparent 100%
+  );
+  height: 120px;
+  animation: scanline 8s linear infinite;
+}
+
+/* CRT vignette — subtle dark edges */
+.crt-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* Box-drawing wrapper — used to frame content in terminal style */
+.box-frame {
+  position: relative;
+  border: 1px solid var(--color-line);
+  background-color: var(--color-paper);
+}
+
+.box-frame::before,
+.box-frame::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--color-neon);
+  pointer-events: none;
+}
+
+.box-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 1.5px solid;
+  border-left: 1.5px solid;
+}
+
+.box-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1.5px solid;
+  border-right: 1.5px solid;
+}
+
+/* Vignette mask */
 .fade-edge {
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);

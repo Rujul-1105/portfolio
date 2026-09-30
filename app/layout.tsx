@@ -63,6 +63,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="font-sans">
+        <div aria-hidden className="scanline-overlay" />
+        <div aria-hidden className="crt-vignette" />
         <NoiseOverlay opacity={0.04} />
         <SiteShell>{children}</SiteShell>
       </body>

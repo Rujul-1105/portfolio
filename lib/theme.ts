@@ -1,15 +1,18 @@
-// Inline script that sets the .dark class on <html> before hydration
-// to avoid a flash of incorrect theme. Reads localStorage first, falls
-// back to prefers-color-scheme.
+// Inline script that sets the theme class on <html> before hydration.
+// Default is DARK (no class needed) unless the user has explicitly chosen
+// light. This is intentional — the cyberscore theme is designed dark-first
+// and falling back to OS preference meant many users saw the light
+// variant on first visit, which is the weaker direction.
 
 export const themeScript = `
 (function () {
   try {
     var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored || (prefersDark ? 'dark' : 'light');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    var theme = stored || 'dark';
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
     }
   } catch (e) {}
 })();

@@ -20,26 +20,42 @@ export function HeroSection() {
     >
       {/* Backdrop layers */}
       <div className="absolute inset-0 fade-edge">
-        <GridPattern size={32} opacity={0.4} />
+        <GridPattern size={32} opacity={0.45} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[18%] -top-[10%] w-[340px] md:w-[520px] text-line/60 md:text-line/40 drift slow-rotate"
+        className="pointer-events-none absolute -right-[18%] -top-[10%] w-[340px] md:w-[520px] text-neon/40 md:text-neon/30 drift slow-rotate"
       >
         <GeometricAccent variant="ring" strokeWidth={1} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-[14%] bottom-[2%] w-[260px] md:w-[360px] text-line/50 md:text-line/30 drift"
+        className="pointer-events-none absolute -left-[14%] bottom-[2%] w-[260px] md:w-[360px] text-neon/30 md:text-neon/20 drift"
         style={{ animationDelay: "2.4s" }}
       >
         <GeometricAccent variant="arc" strokeWidth={1} />
       </div>
 
       <div className="relative mx-auto w-full max-w-[var(--container-wide)] px-6 md:px-10 lg:px-16">
+        {/* Terminal prompt header */}
+        <motion.div
+          className="font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-muted flex items-center gap-3"
+          initial={reduced ? false : { opacity: 0 }}
+          animate={reduced ? undefined : { opacity: 1 }}
+          transition={{ duration: 0.6, ease: EASE }}
+        >
+          <span className="text-neon">┌─</span>
+          <span className="text-ink-2">whoami</span>
+          <span aria-hidden className="text-line">·</span>
+          <span>v0.1</span>
+          <span aria-hidden className="text-line">·</span>
+          <span>2026</span>
+          <span className="text-neon">─┐</span>
+        </motion.div>
+
         {/* Status line */}
         <motion.div
-          className="terminal flex items-center gap-3"
+          className="mt-3 terminal flex items-center gap-3"
           initial={reduced ? false : { opacity: 0 }}
           animate={reduced ? undefined : { opacity: 1 }}
           transition={{ duration: 0.6, ease: EASE }}
@@ -97,9 +113,6 @@ export function HeroSection() {
             <div className="flex flex-col gap-2 md:items-end">
               <span className="terminal">Find me</span>
               <SocialList socials={site.socials} className="md:justify-end" />
-            </div>
-            <div className="hidden md:block">
-              <span className="terminal">v0.1 — 2026</span>
             </div>
           </motion.div>
         </div>
