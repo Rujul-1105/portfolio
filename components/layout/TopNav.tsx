@@ -1,6 +1,5 @@
 import { site } from "@/lib/content";
 import { ThemeToggle } from "@/components/primitives/ThemeToggle";
-import { MobileMenu } from "./MobileMenu";
 
 export function TopNav() {
   const twitterHref = site.twitter ?? "#";
@@ -40,10 +39,6 @@ export function TopNav() {
 
         <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />
-          <MobileMenu
-            items={site.nav}
-            cta={{ label: "Email", href: `mailto:${site.email}` }}
-          />
         </div>
       </nav>
     </header>
