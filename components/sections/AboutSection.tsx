@@ -34,14 +34,14 @@ export function AboutSection() {
         </Reveal>
 
         <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-10">
-          <Reveal>
-            <p className="md:col-span-3 font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-muted">
+          <Reveal className="md:col-span-3">
+            <p className="font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-muted">
               The short version
             </p>
           </Reveal>
 
-          <Reveal>
-            <div className="md:col-span-9 flex flex-col gap-8">
+          <Reveal className="md:col-span-9">
+            <div className="flex flex-col gap-8">
               <p className="font-display italic text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-ink">
                 {site.bio}
               </p>
