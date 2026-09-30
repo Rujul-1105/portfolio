@@ -20,17 +20,17 @@ export function HeroSection() {
     >
       {/* Backdrop layers */}
       <div className="absolute inset-0 fade-edge">
-        <GridPattern size={32} opacity={0.3} />
+        <GridPattern size={32} opacity={0.4} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-[24%] -top-[10%] w-[280px] md:w-[520px] text-line/30 md:text-line/40 drift slow-rotate"
+        className="pointer-events-none absolute -right-[18%] -top-[10%] w-[340px] md:w-[520px] text-line/60 md:text-line/40 drift slow-rotate"
       >
         <GeometricAccent variant="ring" strokeWidth={1} />
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute -left-[20%] bottom-[2%] w-[200px] md:w-[360px] text-line/20 md:text-line/30 drift"
+        className="pointer-events-none absolute -left-[14%] bottom-[2%] w-[260px] md:w-[360px] text-line/50 md:text-line/30 drift"
         style={{ animationDelay: "2.4s" }}
       >
         <GeometricAccent variant="arc" strokeWidth={1} />

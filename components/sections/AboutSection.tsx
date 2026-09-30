@@ -42,7 +42,7 @@ export function AboutSection() {
 
           <Reveal className="md:col-span-9">
             <div className="flex flex-col gap-8">
-              <p className="font-display italic text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-ink">
+              <p className="font-slab text-2xl md:text-3xl lg:text-4xl leading-[1.25] tracking-[-0.005em] text-ink">
                 {site.bio}
               </p>
 
