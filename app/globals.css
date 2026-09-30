@@ -112,6 +112,11 @@ body {
   letter-spacing: var(--tracking-display);
 }
 
+.font-slab {
+  font-family: var(--font-slab), ui-serif, Georgia, serif;
+  font-feature-settings: "ss01";
+}
+
 .font-bold {
   font-family: var(--font-bold), var(--font-display), ui-serif, Georgia, serif;
   letter-spacing: -0.03em;

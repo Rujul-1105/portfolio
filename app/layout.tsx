@@ -4,6 +4,7 @@ import {
   JetBrains_Mono,
   Fraunces,
   Boldonse,
+  Josefin_Slab,
 } from "next/font/google";
 import { site } from "@/lib/content";
 import { buildMetadata, buildViewport } from "@/lib/seo";
@@ -28,6 +29,14 @@ const display = Fraunces({
   display: "swap",
 });
 
+const slab = Josefin_Slab({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-slab",
+  display: "swap",
+});
+
 const sans = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -47,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${bold.variable} ${display.variable} ${sans.variable} ${mono.variable}`}
+      className={`${bold.variable} ${display.variable} ${slab.variable} ${sans.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <head>

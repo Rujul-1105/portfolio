@@ -41,14 +41,17 @@ export function AboutSection() {
           </Reveal>
 
           <Reveal>
-            <div className="md:col-span-9 flex flex-col gap-6">
+            <div className="md:col-span-9 flex flex-col gap-8">
               <p className="font-display italic text-2xl md:text-3xl lg:text-4xl leading-[1.2] text-ink">
                 {site.bio}
               </p>
 
               <ul className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-line border border-line">
                 {VALUES.map((v) => (
-                  <li key={v.label} className="bg-paper p-5 flex flex-col gap-2">
+                  <li
+                    key={v.label}
+                    className="bg-paper p-5 flex flex-col gap-2 hover:bg-paper-2 transition-colors"
+                  >
                     <span className="font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] text-neon">
                       {v.label}
                     </span>
@@ -56,7 +59,7 @@ export function AboutSection() {
                       {v.body}
                     </span>
                   </li>
-                  ))}
+                ))}
               </ul>
             </div>
           </Reveal>

@@ -38,22 +38,8 @@ export function TopNav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2 md:gap-3 shrink-0">
-          <a
-            href={twitterHref}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="hidden md:inline-flex font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2 hover-glow"
-          >
-            Twitter
-          </a>
+        <div className="flex items-center gap-3 shrink-0">
           <ThemeToggle />
-          <a
-            href={`mailto:${site.email}`}
-            className="hidden md:inline-flex bracket-corners items-center gap-2 bg-accent text-ink font-mono text-[10px] uppercase tracking-[var(--tracking-caps)] px-4 py-2 hover:opacity-90 transition-opacity"
-          >
-            Get in touch ↗
-          </a>
           <MobileMenu
             items={site.nav}
             cta={{ label: `Email — ${site.email}`, href: `mailto:${site.email}` }}

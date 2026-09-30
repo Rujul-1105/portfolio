@@ -17,41 +17,29 @@ export function NowSection() {
       meta={updatedLabel}
     >
       <Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-4 items-baseline">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 items-baseline">
           <div className="md:col-span-3">
             <p className="font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-muted">
-              {windowLabel}
+              <span className="text-neon">●</span>
+              <span className="ml-2">{windowLabel}</span>
             </p>
           </div>
           <div className="md:col-span-9">
-            <h2 className="font-display italic text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-[var(--tracking-display)] text-ink max-w-[var(--container-prose)]">
+            <h2 className="font-slab text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.015em] text-ink max-w-[var(--container-prose)]">
               {now.headline}
+              <span className="text-neon">.</span>
             </h2>
           </div>
         </div>
       </Reveal>
 
-      <Stagger className="mt-8 md:mt-10 divide-y divide-line border-t border-line">
+      <Stagger className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 md:gap-y-10">
         {now.blocks.map((b) => (
           <StaggerItem key={b.title}>
             <NowBlock block={b} />
           </StaggerItem>
         ))}
       </Stagger>
-
-      {now.links && now.links.length > 0 ? (
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-          {now.links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="link-underline font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2 hover:text-neon"
-            >
-              ↗ {l.label}
-            </a>
-          ))}
-        </div>
-      ) : null}
     </Section>
   );
 }

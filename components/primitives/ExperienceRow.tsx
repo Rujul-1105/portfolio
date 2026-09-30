@@ -30,7 +30,7 @@ export function ExperienceRow({ entry }: ExperienceRowProps) {
 
       <div className="md:col-span-9 flex flex-col gap-3">
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-          <h3 className="font-display italic text-xl md:text-2xl leading-[1.15] text-ink">
+          <h3 className="font-slab text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-[-0.01em] text-ink">
             {entry.role}
           </h3>
           {entry.url ? (
