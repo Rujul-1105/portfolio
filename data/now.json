@@ -1,0 +1,40 @@
+{
+  "updated": "2026-09-30T14:00:00Z",
+  "window": "September 2026",
+  "headline": "Shipping Scout, learning Rust, reading slowly.",
+  "blocks": [
+    {
+      "title": "Building",
+      "body": "Putting the finishing touches on Scout v1 — annotation sync, weekly digests, and a calmer onboarding. Most days look like a slow loop of writing, deleting, and writing again.",
+      "items": [
+        "Annotation sync across devices",
+        "Weekly digest email — opt-in, no metrics",
+        "Migration path for the v0 users"
+      ]
+    },
+    {
+      "title": "Learning",
+      "body": "Working through Crafting Interpreters in Rust. Half the joy is forgetting what I knew about parsers and rebuilding the intuition.",
+      "items": [
+        "Crafting Interpreters (in Rust)",
+        "A second pass through Designing Data-Intensive Applications"
+      ]
+    },
+    {
+      "title": "Reading",
+      "body": "Slowly, deliberately. The list below is roughly what I'm between right now.",
+      "items": [
+        "The Peregrine — J. A. Baker",
+        "Working in Public — Nadia Eghbal",
+        "Pilgrim at Tinker Creek — Annie Dillard"
+      ]
+    },
+    {
+      "title": "Outside",
+      "body": "Long walks in the morning, espresso in the afternoon. Trying to read fewer things faster and more things slowly."
+    }
+  ],
+  "links": [
+    { "label": "Subscribe by RSS", "href": "/feed.xml" }
+  ]
+}
