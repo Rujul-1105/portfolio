@@ -1,9 +1,9 @@
 # Roadmap
 
 ## Current — v1.2 (shipped)
-Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content, light + dark theme, GitHub activity graph, hover-overlay project cards with opt-in iframe preview.
+Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content, light + dark theme, GitHub activity graph, hover-overlay project cards with opt-in iframe preview. Lives on `main` branch.
 
-## Next — v2 (planning)
+## Next — v2 (planning → building)
 
 **Brief**: A new version inspired by [talent.superteam.fun](https://talent.superteam.fun/). Shift from editorial-minimal to a bold, product-launch aesthetic — still typographic, but louder.
 
@@ -14,6 +14,13 @@ Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content
 - 3-column feature grids, horizontal step processes
 - Profile-centric framing
 - Web3 / energetic vibe (less editorial-essay, more "ship it")
+
+**Locked decisions** (2026-09-30):
+- v2 lives on its own **branch** (`v2`); v1 stays on `main` until v2 is approved. Both deployable side-by-side.
+- Palette: **Deep violet** — `#1a1033` paper (dark), `#f5f0fa` paper (light), `#a855f7` electric violet accent, `#a3e635` lime secondary.
+- **Dark default** with light toggle available.
+- **Skip testimonials** section in v2; can add later.
+- JSON schema stays the same — content swap is automatic.
 
 **What we keep from v1**:
 - Next.js 15 + Tailwind v4 + Motion + TS stack
@@ -26,7 +33,7 @@ Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content
 **What changes for v2**:
 
 ### Aesthetic
-- Palette: deep violet `#1a1033` paper, electric violet `#a855f7` accent, lime `#a3e635` or cyan secondary
+- Palette: deep violet paper, electric violet accent, lime secondary
 - Hero: animated radial gradient backdrop, profile-card intro instead of centered name
 - More rounded corners (`rounded-2xl` on cards)
 - Glassmorphism for nav + cards (`backdrop-blur`, `bg-paper/60`)
@@ -40,29 +47,23 @@ Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content
 5. **How I work** — NEW. Horizontal 3–4 step process (e.g., research → design → build → ship).
 6. **Experience** — Same as v1
 7. **Activity** — Same as v1
-8. **Testimonials** — NEW. Optional — quotes from colleagues/clients.
-9. **Get in touch** — CTA section before footer.
+8. **Get in touch** — CTA section before footer.
 
 ### New components for v2
 - `<ProfileCard>` — hero building block
 - `<GradientMesh>` — animated hero backdrop
 - `<SkillChip>` — pill-shaped skill indicator
 - `<StepProcess>` — horizontal steps with numbers + descriptions
-- `<TestimonialCard>` — quote card with attribution
 - `<CTABanner>` — large gradient CTA section
 
 ### Plan execution
-- Keep both versions swappable: ship v1 as `main` branch, build v2 in a `v2` branch, demo side-by-side
-- OR replace v1 once v2 is approved
-- v2 keeps the same JSON schema — content swap is automatic
+- Build v2 on a `v2` branch off `main`.
+- v1 stays deployable on `main` while v2 is iterated on.
+- Once v2 is approved, merge `v2` → `main` and archive v1 commit hash for reference.
 
-**Open questions** (will resolve before building):
-1. Should v2 replace v1 or live alongside?
-2. Avatar: do you have one to use? (drop in `/public/avatar.jpg`)
-3. Testimonials: any quotes you want featured? Or skip?
-4. Default theme: dark or light? (Recommend dark for v2 to match reference)
-5. "How I work" steps: 3 or 4? What are they?
-6. Is the Solana/violet palette right or should we go elsewhere (electric blue? magenta? lime?)
+**Still open** (will ask before building):
+- "How I work" steps content (3 or 4, what they are)
+- Avatar: do you have one to drop in?
 
 ---
 
@@ -72,7 +73,6 @@ Editorial-minimal portfolio with Swiss × Cybercore accents. JSON-driven content
 - OG image generation via `opengraph-image.tsx` (dynamic from `now.json`)
 - RSS feed at `/feed.xml`
 - Sitemap entries per project
-- Avatar in hero + 404 page
 - Real GitHub activity fetch (1 server-side call per build)
 - Blog / writing section (MDX)
 - prefers-reduced-motion audit (already respects it; verify each motion component)

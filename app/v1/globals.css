@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* -------------------------------------------------------------------------- */
-/* Dark mode — class-based variant. Default for v2.                            */
+/* Dark mode — class-based variant so :root.dark toggles automatically.       */
 /* -------------------------------------------------------------------------- */
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* -------------------------------------------------------------------------- */
-/* Design tokens — v2 Deep Violet palette                                     */
+/* Design tokens                                                              */
 /* -------------------------------------------------------------------------- */
 @theme {
   --font-display: var(--font-display);
@@ -14,25 +14,30 @@
   --font-mono: var(--font-mono);
   --font-bold: var(--font-bold);
 
-  /* Light paper — barely-tinted lavender */
-  --color-paper: #f5f0fa;
-  --color-paper-2: #ebe3f3;
-  --color-ink: #1a1033;
-  --color-ink-2: #443866;
-  --color-muted: #8478a0;
-  --color-line: #d9cfe8;
-  --color-accent: #7c3aed;
+  --color-paper: #efe5d2;
+  --color-paper-2: #e3d6bd;
+  --color-ink: #2a1f17;
+  --color-ink-2: #5a4a3a;
+  --color-muted: #8b7763;
+  --color-line: #cdbf9f;
+  --color-accent: #a8431f;
 
-  /* v2 secondary tones */
-  --color-violet: #a855f7;
-  --color-violet-bright: #c084fc;
-  --color-violet-soft: rgba(168, 85, 247, 0.18);
-  --color-lime: #84cc16;
-  --color-lime-bright: #a3e635;
+  /* Bohemian secondary tones */
+  --color-clay: #c87a4a;
+  --color-sage: #6b7d52;
+  --color-rose: #b87a6e;
 
-  /* Glass surfaces — used on nav + cards */
-  --color-glass: rgba(255, 255, 255, 0.6);
-  --color-glass-border: rgba(255, 255, 255, 0.4);
+  /* Cyber accent — the neon pop on top of warm paper */
+  --color-neon: #2f7a3a;
+  --color-neon-bright: #3da14c;
+  --color-neon-soft: rgba(61, 161, 76, 0.22);
+
+  /* GitHub activity palette — tuned to design */
+  --color-act-0: #d8c9a5;
+  --color-act-1: #b6cf90;
+  --color-act-2: #87b260;
+  --color-act-3: #4f8c3f;
+  --color-act-4: #2f7a3a;
 
   --tracking-display: -0.025em;
   --tracking-mono: 0.04em;
@@ -42,77 +47,36 @@
   --container-page: 72rem;
   --container-wide: 84rem;
 
-  --spacing-section: 6rem;
-
-  --radius-card: 1.25rem;
-  --radius-pill: 9999px;
+  --spacing-section: 8rem;
 }
 
 /* -------------------------------------------------------------------------- */
-/* Dark palette — the v2 default                                              */
+/* Dark palette — overrides via class on <html>                               */
 /* -------------------------------------------------------------------------- */
-:root {
-  /* Default to dark in v2 — applies before hydration via the theme script. */
-  --color-paper: #11091f;
-  --color-paper-2: #1a1130;
-  --color-ink: #f5edff;
-  --color-ink-2: #c9bce6;
-  --color-muted: #8478a0;
-  --color-line: #2a1f47;
-  --color-accent: #a855f7;
+:root.dark {
+  --color-paper: #15110d;
+  --color-paper-2: #1e1812;
+  --color-ink: #f0e6d2;
+  --color-ink-2: #c2b59d;
+  --color-muted: #7d6e5a;
+  --color-line: #2e271d;
+  --color-accent: #d97a4a;
 
-  --color-violet: #c084fc;
-  --color-violet-bright: #d8b4fe;
-  --color-violet-soft: rgba(192, 132, 252, 0.22);
-  --color-lime: #a3e635;
-  --color-lime-bright: #d9f99d;
+  --color-clay: #e89469;
+  --color-sage: #9bb079;
+  --color-rose: #d99b8a;
 
-  --color-glass: rgba(26, 17, 48, 0.55);
-  --color-glass-border: rgba(192, 132, 252, 0.18);
+  --color-neon: #4dff8c;
+  --color-neon-bright: #6effa3;
+  --color-neon-soft: rgba(77, 255, 140, 0.18);
 
-  /* Aliases for primitives shared with v1 (text-neon → lime pop here) */
-  --color-neon: #a3e635;
-  --color-neon-bright: #d9f99d;
-  --color-neon-soft: rgba(163, 230, 53, 0.22);
-
-  --color-act-0: #1a1130;
-  --color-act-1: #2d1f5e;
-  --color-act-2: #5b21b6;
-  --color-act-3: #a855f7;
-  --color-act-4: #d8b4fe;
+  --color-act-0: #1e1812;
+  --color-act-1: #1f3d24;
+  --color-act-2: #2a6b35;
+  --color-act-3: #3da14c;
+  --color-act-4: #6effa3;
 
   color-scheme: dark;
-}
-
-:root.light {
-  --color-paper: #f5f0fa;
-  --color-paper-2: #ebe3f3;
-  --color-ink: #1a1033;
-  --color-ink-2: #443866;
-  --color-muted: #8478a0;
-  --color-line: #d9cfe8;
-  --color-accent: #7c3aed;
-
-  --color-violet: #a855f7;
-  --color-violet-bright: #c084fc;
-  --color-violet-soft: rgba(168, 85, 247, 0.18);
-  --color-lime: #65a30d;
-  --color-lime-bright: #84cc16;
-
-  --color-glass: rgba(255, 255, 255, 0.6);
-  --color-glass-border: rgba(124, 58, 237, 0.18);
-
-  --color-neon: #65a30d;
-  --color-neon-bright: #84cc16;
-  --color-neon-soft: rgba(101, 163, 13, 0.18);
-
-  --color-act-0: #ebe3f3;
-  --color-act-1: #c4b5fd;
-  --color-act-2: #a78bfa;
-  --color-act-3: #7c3aed;
-  --color-act-4: #5b21b6;
-
-  color-scheme: light;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -136,12 +100,12 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-violet);
+  background-color: var(--color-neon);
   color: var(--color-paper);
 }
 
 /* -------------------------------------------------------------------------- */
-/* Typography helpers                                                         */
+/* Editorial typography primitives                                            */
 /* -------------------------------------------------------------------------- */
 .font-display {
   font-family: var(--font-display), ui-serif, Georgia, serif;
@@ -157,15 +121,14 @@ body {
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Decorative primitives                                                      */
-/* -------------------------------------------------------------------------- */
+/* Hairline that respects the line color token */
 .rule {
   height: 1px;
   background-color: var(--color-line);
   width: 100%;
 }
 
+/* Subtle text-link underline that draws in */
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
@@ -178,35 +141,40 @@ body {
   background-size: 100% 1px;
 }
 
-.glass {
-  background-color: var(--color-glass);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid var(--color-glass-border);
-}
-
+/* Focus ring that doesn't fight the design */
 *:focus-visible {
-  outline: 2px solid var(--color-violet);
+  outline: 2px solid var(--color-neon);
   outline-offset: 3px;
   border-radius: 2px;
 }
 
 /* -------------------------------------------------------------------------- */
-/* v2 accents                                                                 */
+/* Cyber accents                                                              */
 /* -------------------------------------------------------------------------- */
 
-.text-violet { color: var(--color-violet); }
-.bg-violet { background-color: var(--color-violet); }
-
-.text-lime { color: var(--color-lime); }
-.bg-lime { background-color: var(--color-lime); }
-
-.glow-violet {
-  text-shadow:
-    0 0 1px var(--color-violet-bright),
-    0 0 24px var(--color-violet-soft);
+/* Neon text — used for status indicators, hover accents, terminal labels */
+.text-neon {
+  color: var(--color-neon);
 }
 
+.bg-neon {
+  background-color: var(--color-neon);
+}
+
+/* Neon glow — applies a soft outer halo */
+.glow-neon {
+  text-shadow:
+    0 0 1px var(--color-neon-bright),
+    0 0 14px var(--color-neon-soft);
+}
+
+.dark .glow-neon {
+  text-shadow:
+    0 0 1px var(--color-neon-bright),
+    0 0 18px var(--color-neon-soft);
+}
+
+/* Hover glow — links and section numbers on hover */
 .hover-glow {
   transition:
     text-shadow 220ms ease,
@@ -214,25 +182,25 @@ body {
 }
 
 .hover-glow:hover {
-  text-shadow: 0 0 16px var(--color-violet-soft);
-  color: var(--color-violet);
+  text-shadow: 0 0 14px var(--color-neon-soft);
+  color: var(--color-neon);
 }
 
-/* Link that glows on hover with violet underline */
-.link-violet {
-  background-image: linear-gradient(var(--color-violet), var(--color-violet));
+/* Neon underline that glows */
+.link-neon {
+  background-image: linear-gradient(var(--color-neon), var(--color-neon));
   background-size: 0% 1px;
   background-repeat: no-repeat;
   background-position: 0 100%;
   transition: background-size 220ms ease;
 }
 
-.link-violet:hover {
+.link-neon:hover {
   background-size: 100% 1px;
-  color: var(--color-violet);
+  color: var(--color-neon);
 }
 
-/* Terminal-style mono labels with `›` chevron */
+/* Terminal-prompt styling — fixed-width mono with a leading chevron */
 .terminal {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -244,41 +212,44 @@ body {
 .terminal-prompt::before {
   content: "›";
   margin-right: 0.5rem;
-  color: var(--color-violet);
+  color: var(--color-neon);
 }
 
-/* Status dot with violet pulse */
+/* Status dot — small neon circle with slow pulse */
 .status-dot {
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: var(--color-lime);
-  box-shadow: 0 0 0 0 var(--color-lime);
+  background-color: var(--color-neon);
+  box-shadow: 0 0 0 0 var(--color-neon);
   animation: pulse-dot 2.4s ease-out infinite;
   vertical-align: middle;
 }
 
 @keyframes pulse-dot {
-  0% { box-shadow: 0 0 0 0 var(--color-lime); opacity: 1; }
-  70% { box-shadow: 0 0 0 10px transparent; opacity: 0.7; }
-  100% { box-shadow: 0 0 0 0 transparent; opacity: 1; }
+  0% { box-shadow: 0 0 0 0 var(--color-neon-soft); }
+  70% { box-shadow: 0 0 0 8px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
 }
 
+/* Cursor blink */
 @keyframes terminal-blink {
   0%, 50% { opacity: 1; }
   50.01%, 100% { opacity: 0; }
 }
 
+/* Subtle vertical drift for floating accents */
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -10px, 0); }
+  50% { transform: translate3d(0, -8px, 0); }
 }
 
 .drift {
   animation: drift 9s ease-in-out infinite;
 }
 
+/* Slow rotate for geometric accents */
 @keyframes slow-rotate {
   to { transform: rotate(360deg); }
 }
@@ -288,22 +259,7 @@ body {
   transform-origin: 50% 50%;
 }
 
-@keyframes mesh-shift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.85;
-  }
-  50% {
-    transform: translate3d(-2%, 1%, 0) scale(1.06);
-    opacity: 1;
-  }
-}
-
-.mesh-blob {
-  animation: mesh-shift 18s ease-in-out infinite;
-}
-
-/* Vignette for hero backgrounds */
+/* Scroll-driven fade for top-of-page accent */
 .fade-edge {
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);

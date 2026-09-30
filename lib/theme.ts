@@ -1,15 +1,17 @@
-// Inline script that sets the .dark class on <html> before hydration
-// to avoid a flash of incorrect theme. Reads localStorage first, falls
-// back to prefers-color-scheme.
+// Inline script that sets the theme class on <html> before hydration
+// to avoid a flash of incorrect theme. v2 defaults to DARK unless the
+// user explicitly chose light.
 
 export const themeScript = `
 (function () {
   try {
     var stored = localStorage.getItem('theme');
-    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    var theme = stored || (prefersDark ? 'dark' : 'light');
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
+    var prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    var theme = stored || (prefersLight ? 'light' : 'dark');
+    if (theme === 'light') {
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
     }
   } catch (e) {}
 })();

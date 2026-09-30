@@ -9,7 +9,6 @@ import { site } from "@/lib/content";
 import { buildMetadata, buildViewport } from "@/lib/seo";
 import { themeScript } from "@/lib/theme";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { NoiseOverlay } from "@/components/decor/NoiseOverlay";
 import "./globals.css";
 
 const bold = Boldonse({
@@ -54,7 +53,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="font-sans">
-        <NoiseOverlay opacity={0.04} />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

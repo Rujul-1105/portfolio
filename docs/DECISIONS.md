@@ -43,3 +43,12 @@ Format: `[YYYY-MM-DD] — decision — rationale`
 ## Hover preview — v1.2
 - **2026-09-30** — `ProjectHoverPreview` adds a hover overlay to the featured card. Decision: render a dark gradient overlay with title + CTA instead of an iframe by default — many production sites set `X-Frame-Options: DENY` which would just show a blank box. Iframe is opt-in via new `previewUrl` field.
 - **2026-09-30** — Compact rows get a left neon accent line on hover (scale-y origin top, 300ms) + visible ↗ + subtle background tint. Reads as "row is alive" without competing with the featured card.
+
+## Aesthetic — v2.0-rc (cut on `v2` branch)
+- **2026-09-30** — **Deep Violet + Lime** palette replaces bohemian cream. Dark default (paper `#11091f`, ink `#f5edff`), violet accent `#a855f7`, lime secondary `#a3e635`. Light mode available via `.light` class flip.
+- **2026-09-30** — Glassmorphism introduced — `glass` utility sets `backdrop-filter: blur(18px) saturate(140%)` + tinted glass fill + violet-tinted border. Used on TopNav, ProfileCard, project cards, GitHub activity, CTABanner.
+- **2026-09-30** — Hero redesigned as **ProfileCard** (avatar + identity in a glass container) on top of an animated **GradientMesh** (3 radial-gradient blobs drifting over a 48px grid). Replaces the centered-name hero of v1.
+- **2026-09-30** — Two new sections added: **About** (bio + skill chips) and **How I work** (4-step horizontal process: Listen / Sketch / Build / Ship) and a closing **CTABanner** before the footer.
+- **2026-09-30** — `--color-neon` aliased to `--color-lime` in v2 globals.css so primitives shared with v1 (ProjectRow hover arrow, ExperienceRow present indicator) work in both versions without duplication.
+- **2026-09-30** — v1 home moved to `/v1` route group (`app/v1/page.tsx` + `app/v1/globals.css` + `app/v1/layout.tsx`). v1 retains its bohemian palette on that path; v2 is the new default at `/`.
+- **2026-09-30** — Default theme flipped to dark (was light in v1). `themeScript` now adds `.light` for light mode instead of `.dark` for dark — `.light` class opt-in means "no class" = dark, which matches the v2 default.
