@@ -26,22 +26,31 @@ function colorFor(level: ActivityCell["level"]) {
 }
 
 export function GitHubActivity({ data }: GitHubActivityProps) {
-  const cell = 11;
-  const gap = 3;
+  const cell = 14;
+  const gap = 4;
   const stride = cell + gap;
   const cols = 53;
   const rows = 7;
-  const width = cols * stride + 28; // padding for month labels
-  const height = rows * stride + 18; // padding for day labels
+  const labelGutter = 32;
+  const width = cols * stride + labelGutter;
+  const height = rows * stride + 22;
 
-  // Month labels — emit at the first column of each new month.
+  // Month labels — emit at the first column of each new month, but only
+  // when there's at least 2 weeks between labels so adjacent months
+  // don't overlap (e.g. when a week spans Sep 30 → Oct 6).
   const monthLabels: { x: number; label: string }[] = [];
   let lastMonth = -1;
+  let lastLabeledWeek = -2;
   for (let w = 0; w < cols; w++) {
     const cellDate = new Date(data.cells[w * 7].date);
     const m = cellDate.getUTCMonth();
-    if (m !== lastMonth) {
-      monthLabels.push({ x: w * stride + 28, label: MONTHS[m] });
+    if (m !== lastMonth && w - lastLabeledWeek >= 2) {
+      monthLabels.push({ x: w * stride + labelGutter, label: MONTHS[m] });
+      lastMonth = m;
+      lastLabeledWeek = w;
+    } else if (m !== lastMonth) {
+      // Month changed but no room to label — still update lastMonth so
+      // we don't try to label it again next week.
       lastMonth = m;
     }
   }
@@ -64,7 +73,7 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
                 key={i}
                 x={m.x}
                 y={10}
-                fontSize="9"
+                fontSize="10"
                 letterSpacing="0.04em"
                 style={{ textTransform: "uppercase" }}
               >
@@ -80,8 +89,8 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
                 <text
                   key={i}
                   x={0}
-                  y={18 + i * stride + 8}
-                  fontSize="9"
+                  y={22 + i * stride + 10}
+                  fontSize="10"
                   letterSpacing="0.04em"
                 >
                   {d}
@@ -91,7 +100,7 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
           </g>
 
           {/* Cells */}
-          <g transform="translate(28, 18)">
+          <g transform={`translate(${labelGutter}, 22)`}>
             {data.cells.map((c, i) => {
               const w = Math.floor(i / 7);
               const d = i % 7;
@@ -102,8 +111,8 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
                   y={d * stride}
                   width={cell}
                   height={cell}
-                  rx={2}
-                  ry={2}
+                  rx={2.5}
+                  ry={2.5}
                   fill={colorFor(c.level)}
                 >
                   <title>
@@ -134,7 +143,7 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
           {[0, 1, 2, 3, 4].map((l) => (
             <span
               key={l}
-              className="inline-block h-3 w-3 rounded-[2px] border border-line/40"
+              className="inline-block h-3.5 w-3.5 rounded-[2px] border border-line/40"
               style={{ backgroundColor: `var(--color-act-${l})` }}
               aria-hidden
             />
