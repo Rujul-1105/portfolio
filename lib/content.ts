@@ -41,7 +41,8 @@ const siteSchema = z.object({
     .array(
       z.object({
         label: z.string().min(1),
-        href: z.string().url(),
+        // Allow both absolute URLs and in-site relative paths (e.g. /cv.pdf)
+        href: z.string().min(1),
         icon: socialPlatformSchema,
       })
     )
