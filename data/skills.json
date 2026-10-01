@@ -1,0 +1,44 @@
+{
+    "skills": [
+        {
+            "category": "Languages",
+            "items": ["Rust", "TypeScript", "C++", "Python", "JavaScript"]
+        },
+        {
+            "category": "Systems & Networking",
+            "items": ["TCP/IP", "Socket-Programming", "Multithreading", "Redis Streams"]
+        },
+        {
+            "category": "Blockchain",
+            "items": [
+                "Solana",
+                "Anchor",
+                "SPL Token-2022",
+                "PDAs",
+                "CPIs",
+                "LiteSVM",
+                "MagicBlock: ER/PER/VRF"
+            ]
+        },
+        {
+            "category": "Databases & DevOps",
+            "items": ["PostgreSQL", "MongoDB", "SQL", "Docker"]
+        },
+        {
+            "category": "Frameworks & Tools",
+            "items": [
+                "Next.js",
+                "React-19",
+                "Vite",
+                "Tailwind",
+                "GSAP",
+                "Framer Motion",
+                "Zustand",
+                "Scikit-learn",
+                "NumPy",
+                "Pandas",
+                "Git"
+            ]
+        }
+    ]
+}

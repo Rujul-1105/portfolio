@@ -1,93 +1,106 @@
 {
   "projects": [
     {
-      "slug": "scout",
-      "title": "Scout",
-      "year": "2025",
-      "summary": "A reading list that thinks with you. Capture, annotate, and return to the ideas that shaped your work.",
-      "description": "Scout is a personal reading companion built around the way people actually return to books, articles, and notes. It captures links from anywhere, syncs highlights, and surfaces the connections between what you read. Built solo over six months.",
+      "slug": "conviction",
+      "title": "Conviction",
+      "year": "2026",
+      "summary": "A real-time risk duel on Solana — two teams lock token baskets behind sealed threshold bands; whoever breaks out first auto-folds, the survivor mints the round's governance token.",
+      "description": "Two teams stake 2–3 SPL token baskets behind sealed threshold bands via MagicBlock Permissioned Ephemeral Rollups. Whoever's basket breaks the band first auto-folds and the survivor mints FTR — the round's governance token. 25-SPL curated universe, Birdeye live prices with seed-walk fallback, 10-route Next.js frontend, 25-instruction Anchor program with 10 state accounts. Shipped for MagicBlock Blitz v8.",
       "role": "Solo build",
-      "stack": ["TypeScript", "Next.js", "Postgres", "Rust"],
+      "stack": ["Anchor (Rust)", "Solana", "Next.js 14", "MagicBlock ER/PER/VRF", "shadcn", "Framer Motion", "Birdeye API", "Zustand", "React Query"],
       "links": [
-        { "kind": "live", "href": "https://example.com/scout" },
-        { "kind": "github", "href": "https://github.com/yourhandle/scout" }
-      ],
-      "cover": {
-        "src": "/projects/scout/cover.jpg",
-        "alt": "An open notebook on a wooden desk beside a ceramic mug.",
-        "width": 1000,
-        "height": 563,
-        "aspect": "16/9"
-      },
-      "featured": true,
-      "status": "shipped",
-      "previewUrl": "https://en.wikipedia.org/wiki/Reading"
-    },
-    {
-      "slug": "fieldnotes",
-      "title": "Fieldnotes",
-      "year": "2025",
-      "summary": "A tiny journal app that nudges you to write one paragraph a day.",
-      "description": "Fieldnotes strips journaling back to its essentials: one paragraph, written daily, stored locally. No accounts, no syncing, no streaks. Just a quiet place to land at the end of the day.",
-      "role": "Solo build",
-      "stack": ["Swift", "SwiftUI", "SQLite"],
-      "links": [
-        { "kind": "live", "href": "https://example.com/fieldnotes" }
+        { "kind": "live", "href": "https://conviction-nine.vercel.app" },
+        { "kind": "github", "href": "https://github.com/Rujul-1105/conviction" }
       ],
       "cover": {
         "src": "/projects/fieldnotes/cover.jpg",
-        "alt": "A worn leather journal opened to a blank page.",
-        "width": 1000,
-        "height": 563,
+        "alt": "Two opposing scoreboards with red and green threshold lines meeting at a tokenised chart.",
+        "width": 1600,
+        "height": 900,
         "aspect": "16/9"
       },
       "status": "shipped",
-      "previewUrl": "https://en.wikipedia.org/wiki/Journal"
+      "previewUrl": "https://conviction-nine.vercel.app"
     },
     {
-      "slug": "compass",
-      "title": "Compass",
-      "year": "2024",
-      "summary": "An opinionated map of the modern web — curated feeds, slow delivery, no metrics.",
-      "description": "Compass is a reader that treats the feed as a magazine, not a stream. Editors pick the week's reading, you receive it on a schedule, and the count never moves. Built with a small team of three.",
-      "role": "Co-founder, engineering",
-      "stack": ["Elixir", "Phoenix", "Postgres", "TypeScript"],
-      "links": [
-        { "kind": "live", "href": "https://example.com/compass" },
-        { "kind": "github", "href": "https://github.com/yourhandle/compass" },
-        { "kind": "writeup", "href": "https://example.com/compass/notes" }
-      ],
-      "cover": {
-        "src": "/projects/compass/cover.jpg",
-        "alt": "A vintage brass compass resting on a folded map.",
-        "width": 1000,
-        "height": 563,
-        "aspect": "16/9"
-      },
-      "status": "archived",
-      "previewUrl": "https://en.wikipedia.org/wiki/Web_feed"
-    },
-    {
-      "slug": "ledger",
-      "title": "Ledger",
-      "year": "2024",
-      "summary": "A command-line tool for tracking what you read, watch, and build — without leaving the terminal.",
-      "description": "Ledger is a 4KB binary you pipe things into. Over time it builds a quiet record of your interests. Export to JSON, Markdown, or a static site whenever you're ready.",
+      "slug": "meridian",
+      "title": "Meridian",
+      "year": "2026",
+      "summary": "A Solana CDP accepting BlackRock's BUIDL as collateral and minting a USD-pegged stablecoin — seven-program Anchor architecture with strict logic / custody separation.",
+      "description": "Accepts BlackRock's BUIDL (tokenized US Treasury fund) as collateral and mints TVLT, a USD-pegged stablecoin. Seven-program Anchor architecture with strict separation between logic and custody; permissionless liquidation, yield distribution, automated collateral monitoring, oracle checks (Pyth + Switchboard), reserve buffering, protocol solvency protections, PDAs, CPIs, fixed-point math, event-driven logic, multisig controls (Squads). Renamed from Meridian during a clearance pass — internal working name is Trevault / TVLT.",
       "role": "Solo build",
-      "stack": ["Go", "SQLite"],
+      "stack": ["Solana", "Anchor", "Rust", "Pyth", "Switchboard", "SPL Token-2022", "Squads multisig"],
       "links": [
-        { "kind": "github", "href": "https://github.com/yourhandle/ledger" },
-        { "kind": "docs", "href": "https://example.com/ledger" }
+        { "kind": "github", "href": "https://github.com/Rujul-1105/meridian" }
       ],
       "cover": {
         "src": "/projects/ledger/cover.jpg",
-        "alt": "Code on a dark terminal screen, softly lit.",
-        "width": 1000,
-        "height": 563,
+        "alt": "A vault door with a tokenised treasury certificate slotted into the central seal.",
+        "width": 1600,
+        "height": 900,
         "aspect": "16/9"
       },
-      "status": "shipped",
-      "previewUrl": "https://en.wikipedia.org/wiki/Command-line_interface"
+      "status": "in-progress"
+    },
+    {
+      "slug": "cex-demo",
+      "title": "CEX Demo",
+      "year": "2026",
+      "summary": "A full centralised exchange on Solana devnet — stateless actix-web API + stateful order-book server + settler worker bridged via Redis Streams.",
+      "description": "Three services: a stateless actix-web REST API, a stateful order-book matching engine, and a settler worker — all bridged via Redis Streams. Matching engine supports limit, market (IOC), stop, and stop-limit orders with FIFO price-time priority, partial fills, and self-match prevention. Anchor program handles deposit, withdraw, and settle_fill. Next.js 14 frontend with Phantom wallet and TradingView charts. Program ID: DNhvifJ6mcgVRRA4xaNKH82tjoHseN3GQKiLi8R7i6HY.",
+      "role": "Solo build",
+      "stack": ["Rust (actix-web, redis, tokio, ed25519-dalek, jsonwebtoken, rust_decimal)", "Anchor 0.31", "Next.js 14", "@solana/web3.js", "lightweight-charts", "TanStack Query", "Zustand"],
+      "links": [
+        { "kind": "github", "href": "https://github.com/Rujul-1105/crypto-exchange" }
+      ],
+      "cover": {
+        "src": "/projects/scout/cover.jpg",
+        "alt": "A red and green order-book ladder stretching into the distance, neon-lit on a dark terminal screen.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped"
+    },
+    {
+      "slug": "web-wallet",
+      "title": "Web-based Wallet",
+      "year": "2026",
+      "summary": "A browser-based wallet covering both Solana and Ethereum — BIP-39 mnemonics, ed25519 / secp256k1 key derivation, in-browser key management.",
+      "description": "Browser-based wallet covering both Solana and Ethereum. BIP-39 mnemonic generation, ed25519-hd-key derivation for Solana, ethers for Ethereum signing, TweetNaCl primitives, Zustand state. Vite + React 19 + TypeScript.",
+      "role": "Solo build",
+      "stack": ["Vite", "React 19", "TypeScript", "@solana/web3.js", "ethers", "ed25519-hd-key", "bip39", "tweetnacl", "zustand"],
+      "links": [
+        { "kind": "github", "href": "https://github.com/Rujul-1105/web-based-wallet" }
+      ],
+      "cover": {
+        "src": "/projects/compass/cover.jpg",
+        "alt": "A cryptographic keycard rendered as a glowing compass needle pointing at a wallet address.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped"
+    },
+    {
+      "slug": "rust-server",
+      "title": "Rust Web Server",
+      "year": "2026",
+      "summary": "A multithreaded HTTP/1.1 server in Rust stdlib — custom reusable ThreadPool, function-pointer router, graceful shutdown. No external dependencies.",
+      "description": "Multithreaded HTTP/1.1 server written against only the Rust standard library. Custom reusable ThreadPool replacing thread-per-request, real HTTP parser, function-pointer router, generic handlers, named workers, graceful shutdown. Routes /, /sleep, /health, plus 404 / 405. Built from The Rust Book chapter 20 and extended.",
+      "role": "Solo build",
+      "stack": ["Rust 2024 edition (stdlib only)"],
+      "links": [
+        { "kind": "github", "href": "https://github.com/Rujul-1105/rust-web-server" }
+      ],
+      "cover": {
+        "src": "/projects/compass/cover.jpg",
+        "alt": "An HTTP request arrow looping through a pool of worker threads, rendered on a black schematic.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped"
     }
   ]
 }

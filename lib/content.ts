@@ -3,11 +3,13 @@ import siteJson from "@/data/site.json";
 import projectsJson from "@/data/projects.json";
 import experienceJson from "@/data/experience.json";
 import nowJson from "@/data/now.json";
+import skillsJson from "@/data/skills.json";
 import type {
   SiteConfig,
   ProjectsFile,
   ExperienceFile,
   NowFile,
+  SkillsFile,
 } from "@/types/content";
 
 // --------------------------------------------------------------------------
@@ -144,6 +146,17 @@ const nowSchema = z.object({
     .optional(),
 }) satisfies z.ZodType<NowFile>;
 
+const skillsSchema = z.object({
+  skills: z
+    .array(
+      z.object({
+        category: z.string().min(1),
+        items: z.array(z.string().min(1)).min(1),
+      })
+    )
+    .min(1),
+}) satisfies z.ZodType<SkillsFile>;
+
 // --------------------------------------------------------------------------
 // Validated exports — validation runs at module load.
 // --------------------------------------------------------------------------
@@ -154,6 +167,7 @@ export const experience: ExperienceFile = experienceSchema.parse(
   experienceJson
 );
 export const now: NowFile = nowSchema.parse(nowJson);
+export const skills: SkillsFile = skillsSchema.parse(skillsJson);
 
 // Sorted helper — newest first.
 export const experienceSorted = [...experience.experience].sort((a, b) =>

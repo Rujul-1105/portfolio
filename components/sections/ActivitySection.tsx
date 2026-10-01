@@ -29,7 +29,7 @@ export async function ActivitySection() {
   return (
     <Section
       id="activity"
-      index="05"
+      index="06"
       title="Activity"
       meta="Last 365 days"
     >

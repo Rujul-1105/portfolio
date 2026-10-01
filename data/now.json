@@ -1,37 +1,35 @@
 {
-  "updated": "2026-09-30T14:00:00Z",
-  "window": "September 2026",
-  "headline": "Shipping Scout, learning Rust, reading slowly.",
+  "updated": "2026-10-02T09:00:00Z",
+  "window": "October 2026",
+  "headline": "Shipping Conviction, finishing Meridian, sharpening CEX.",
   "blocks": [
     {
       "title": "Building",
-      "body": "Putting the finishing touches on Scout v1 — annotation sync, weekly digests, and a calmer onboarding. Most days look like a slow loop of writing, deleting, and writing again.",
+      "body": "Conviction is live on devnet and I'm tightening the match flow — better edge cases, cleaner settlement, and the long tail of small UX details. Meridian is in clearance review ahead of the Anchor SDK cutover. CEX Demo is in polish mode: nicer charts, fewer race conditions in the settler worker.",
       "items": [
-        "Annotation sync across devices",
-        "Weekly digest email — opt-in, no metrics",
-        "Migration path for the v0 users"
+        "Conviction — settlement edge cases and a quieter match screen",
+        "Meridian (Trevault / TVLT) — wiring Pyth + Switchboard oracles and the liquidation path",
+        "CEX Demo — chart ergonomics, settle endpoint slowness, phantom reconnection flow",
+        "BoST Portal at Softcom — onboarding the next batch of club maintainers"
       ]
     },
     {
       "title": "Learning",
-      "body": "Working through Crafting Interpreters in Rust. Half the joy is forgetting what I knew about parsers and rebuilding the intuition.",
+      "body": "Working through Crafting Interpreters in Rust end-to-end — rewriting the Java tree-walker chapter in Rust and finding that half the lessons are about lifetimes, not parsers. Slowly working through a second pass of Designing Data-Intensive Applications.",
       "items": [
-        "Crafting Interpreters (in Rust)",
-        "A second pass through Designing Data-Intensive Applications"
+        "Crafting Interpreters — rewriting chapters in Rust",
+        "Designing Data-Intensive Applications — second pass, with pen",
+        "Solana program security reading list (Neodyme + Trail of Bits writeups)"
       ]
     },
     {
       "title": "Reading",
       "body": "Slowly, deliberately. The list below is roughly what I'm between right now.",
       "items": [
-        "The Peregrine — J. A. Baker",
+        "The Big Short — Michael Lewis",
         "Working in Public — Nadia Eghbal",
-        "Pilgrim at Tinker Creek — Annie Dillard"
+        "The Man Who Solved the Market — Gregory Zuckerman"
       ]
-    },
-    {
-      "title": "Outside",
-      "body": "Long walks in the morning, espresso in the afternoon. Trying to read fewer things faster and more things slowly."
     }
   ]
 }

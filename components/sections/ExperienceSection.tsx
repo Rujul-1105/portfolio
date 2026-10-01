@@ -7,7 +7,7 @@ export function ExperienceSection() {
   return (
     <Section
       id="experience"
-      index="03"
+      index="04"
       title="Experience"
       meta={`${experienceSorted.length} roles`}
     >

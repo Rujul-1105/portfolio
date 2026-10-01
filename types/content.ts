@@ -121,3 +121,12 @@ export interface NowFile {
   blocks: NowBlock[];
   links?: { label: string; href: string }[];
 }
+
+export interface SkillCategory {
+  category: string;
+  items: string[];
+}
+
+export interface SkillsFile {
+  skills: SkillCategory[];
+}

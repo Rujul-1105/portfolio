@@ -1,44 +1,36 @@
 {
-  "experience": [
-    {
-      "company": "Independent",
-      "role": "Software engineer, freelance",
-      "start": "2025-03",
-      "end": "present",
-      "location": "Remote",
-      "summary": "Designing and shipping small, focused software for clients in publishing and education. Currently building Scout and Fieldnotes in the gaps.",
-      "highlights": [
-        "Shipped 3 production apps with sustained weekly active use",
-        "Replaced two client legacy backends with typed services"
-      ],
-      "stack": ["TypeScript", "Next.js", "Postgres", "Swift"],
-      "kind": "freelance"
-    },
-    {
-      "company": "Acme Inc.",
-      "role": "Senior software engineer",
-      "url": "https://example.com",
-      "start": "2022-07",
-      "end": "2025-02",
-      "location": "San Francisco, CA",
-      "summary": "Led the editor team for a writing product used by several hundred thousand people. Owned the document model end to end and shipped the realtime collaboration rewrite.",
-      "highlights": [
-        "Drove the migration to operational transforms — 4× faster conflict resolution",
-        "Built and mentored a team of four engineers",
-        "Reduced p95 editor latency from 380ms to 90ms"
-      ],
-      "stack": ["TypeScript", "React", "Go", "Postgres", "CRDTs"],
-      "kind": "work"
-    },
-    {
-      "company": "Meridian Labs",
-      "role": "Software engineer intern",
-      "start": "2021-06",
-      "end": "2021-09",
-      "location": "New York, NY",
-      "summary": "Built internal tooling for the data platform team. Shipped a CLI for managing dataset versioning that became the team's default.",
-      "stack": ["Python", "Click", "BigQuery"],
-      "kind": "internship"
-    }
-  ]
+    "experience": [
+        {
+            "company": "Softcom — Software Community, IIT Ropar",
+            "role": "Secretary",
+            "start": "2026-05",
+            "end": "present",
+            "location": "IIT Ropar",
+            "summary": "Lead the Software Community at IIT Ropar. Drove ~100% membership growth and a 4x increase in active participation. Organised overnight hackathons; shipped the BoST Portal — an umbrella platform for every technical club on campus, built on Next.js + MongoDB.",
+            "highlights": [
+                "Grew membership ~100% (20–25 → 45+) across recruitment cycles",
+                "Managed an 11-member coordination team",
+                "4x increase in active participation through events and projects",
+                "Organised an overnight campus hackathon end-to-end",
+                "Built the BoST Portal (Next.js + MongoDB), now used by every technical club on campus"
+            ],
+            "stack": [],
+            "kind": "work"
+        },
+        {
+            "company": "Softcom — Software Community, IIT Ropar",
+            "role": "Representative",
+            "start": "2025-05",
+            "end": "2026-05",
+            "location": "IIT Ropar",
+            "summary": "Coordinated logistics, ran recruitment, and co-built the BoST Portal — an umbrella platform for all student technical clubs (Next.js 14 + MongoDB).",
+            "highlights": [
+                "Led recruitment driving ~100% membership growth",
+                "4x increase in active participation across events and projects",
+                "Worked in an 11-member team across clubs"
+            ],
+            "stack": ["Next.js", "MongoDB", "Tailwind"],
+            "kind": "work"
+        }
+    ]
 }

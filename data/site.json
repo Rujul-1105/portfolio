@@ -3,16 +3,21 @@
     "handle": "@rujul_11",
     "twitter": "https://x.com/rujul_11",
     "github": "https://github.com/Rujul-1105",
-    "tagline": "Builds thoughtful software for the web.",
-    "role": "Software engineer",
-    "location": "",
+    "tagline": "Builds systems on Solana, Rust backends, and the occasional full-stack app.",
+    "role": "IIT Ropar",
+    "location": "IIT Ropar, Rupnagar, India",
     "email": "rujul.sol@gmail.com",
-    "bio": "I design and build calm, considered software — mostly for the web. Recently focused on tools for thinking and writing, with a soft spot for typography and the small details that make interfaces feel like they were made by a person.",
+    "bio": "Pre-final year at IIT Ropar, working at the intersection of Solana and systems engineering. I spend most days writing Anchor programs, Rust services, and the occasional Next.js app that holds the front end together. I care about correctness, fixed-point math, and shipping small things end-to-end.",
     "socials": [
         { "label": "GitHub", "href": "https://github.com/Rujul-1105", "icon": "github" },
         { "label": "X", "href": "https://x.com/rujul_11", "icon": "x" },
-        { "label": "Read.cv", "href": "/cv.pdf", "icon": "readcv" },
-        { "label": "Email", "href": "mailto:rujul.sol@gmail.com", "icon": "email" }
+        {
+            "label": "LinkedIn",
+            "href": "https://www.linkedin.com/in/rujul-matta-552a8223b",
+            "icon": "linkedin"
+        },
+        { "label": "Email", "href": "mailto:rujul.sol@gmail.com", "icon": "email" },
+        { "label": "Read.cv", "href": "/cv.pdf", "icon": "readcv" }
     ],
     "nav": [
         { "label": "Now", "href": "#now" },
@@ -21,7 +26,7 @@
     ],
     "meta": {
         "titleTemplate": "%s — Portfolio",
-        "description": "Personal site of Your Name — software engineer, builder of considered tools.",
-        "themeColor": "#efe5d2"
+        "description": "Rujul Matta — software engineer at IIT Ropar. Solana programs, Rust services, and full-stack builds.",
+        "themeColor": "#050608"
     }
 }
