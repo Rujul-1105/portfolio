@@ -13,11 +13,11 @@
         { "kind": "github", "href": "https://github.com/yourhandle/scout" }
       ],
       "cover": {
-        "src": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&h=800&fit=crop&q=80",
+        "src": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&h=563&fit=crop&q=75",
         "alt": "An open notebook on a wooden desk beside a ceramic mug.",
-        "width": 1200,
-        "height": 800,
-        "aspect": "3/2"
+        "width": 1000,
+        "height": 563,
+        "aspect": "16/9"
       },
       "featured": true,
       "status": "shipped",
@@ -35,11 +35,11 @@
         { "kind": "live", "href": "https://example.com/fieldnotes" }
       ],
       "cover": {
-        "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&h=800&fit=crop&q=80",
+        "src": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000&h=563&fit=crop&q=75",
         "alt": "A worn leather journal opened to a blank page.",
-        "width": 1200,
-        "height": 800,
-        "aspect": "3/2"
+        "width": 1000,
+        "height": 563,
+        "aspect": "16/9"
       },
       "status": "shipped",
       "previewUrl": "https://en.wikipedia.org/wiki/Journal"
@@ -58,11 +58,11 @@
         { "kind": "writeup", "href": "https://example.com/compass/notes" }
       ],
       "cover": {
-        "src": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&h=800&fit=crop&q=80",
+        "src": "https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1000&h=563&fit=crop&q=75",
         "alt": "A vintage brass compass resting on a folded map.",
-        "width": 1200,
-        "height": 800,
-        "aspect": "3/2"
+        "width": 1000,
+        "height": 563,
+        "aspect": "16/9"
       },
       "status": "archived",
       "previewUrl": "https://en.wikipedia.org/wiki/Web_feed"
@@ -80,11 +80,11 @@
         { "kind": "docs", "href": "https://example.com/ledger" }
       ],
       "cover": {
-        "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=800&fit=crop&q=80",
+        "src": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1000&h=563&fit=crop&q=75",
         "alt": "Code on a dark terminal screen, softly lit.",
-        "width": 1200,
-        "height": 800,
-        "aspect": "3/2"
+        "width": 1000,
+        "height": 563,
+        "aspect": "16/9"
       },
       "status": "shipped",
       "previewUrl": "https://en.wikipedia.org/wiki/Command-line_interface"
