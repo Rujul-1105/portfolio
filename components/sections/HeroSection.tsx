@@ -95,7 +95,7 @@ export function HeroSection() {
                         transition={{ duration: 0.9, ease: EASE, delay: 0.08 }}
                     >
                         <motion.h1
-                            className="font-bold text-[clamp(3.5rem,11vw,9rem)] leading-[0.95] tracking-[-0.015em] text-ink flex flex-wrap items-baseline gap-x-[0.65em]"
+                            className="font-bold text-[clamp(3.5rem,11vw,9rem)] leading-[0.95] tracking-[-0.015em] text-ink flex flex-wrap items-baseline gap-x-[0.25em] gap-y-[0.25em]"
                             initial={reduced ? false : { opacity: 0, y: 24 }}
                             animate={reduced ? undefined : { opacity: 1, y: 0 }}
                             transition={{ duration: 1.0, ease: EASE }}

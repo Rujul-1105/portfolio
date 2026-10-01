@@ -1,15 +1,30 @@
 import { site } from "@/lib/content";
 import { buildMockActivity } from "@/lib/activity";
+import { fetchGitHubContributions } from "@/lib/github";
 import { Section } from "@/components/primitives/Section";
 import { GitHubActivity } from "@/components/decor/GitHubActivity";
 import { Reveal } from "@/components/motion/Reveal";
 
-export function ActivitySection() {
+/**
+ * Activity section. Server-rendered. Tries the real GitHub GraphQL
+ * API first (when GH_TOKEN is set in the environment), falls back to
+ * a deterministic mock if not — so the page never breaks.
+ *
+ * `export const revalidate = 3600` makes this an ISR page that
+ * regenerates once an hour. Activity numbers stay roughly current
+ * without hammering the API.
+ */
+export const revalidate = 3600;
+
+export async function ActivitySection() {
   const username = site.github
     ? new URL(site.github).pathname.replace(/^\//, "")
     : "yourhandle";
   const href = site.github ?? `https://github.com/${username}`;
-  const data = buildMockActivity(username, href);
+
+  const real = await fetchGitHubContributions(username, process.env.GH_TOKEN);
+  const data = real ?? buildMockActivity(username, href);
+  const isMock = real === null;
 
   return (
     <Section
@@ -38,9 +53,18 @@ export function ActivitySection() {
               {data.total.toLocaleString()} contributions, mostly small ones.
             </h2>
             <p className="mt-6 text-base text-ink-2 leading-relaxed max-w-[var(--container-prose)]">
-              A quiet, steady year of building. Real data hooks in here when
-              you point <code className="font-mono text-ink">site.github</code> at
-              your profile — for now this is a representative pattern.
+              {isMock ? (
+                <>
+                  A quiet, steady year of building. Real data hooks in here
+                  when you set <code className="font-mono text-ink">GH_TOKEN</code>{" "}
+                  in your environment.
+                </>
+              ) : (
+                <>
+                  Pulled live from GitHub via GraphQL — regenerated on every
+                  deploy and at most once an hour.
+                </>
+              )}
             </p>
           </div>
         </div>
