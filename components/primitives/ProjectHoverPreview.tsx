@@ -15,9 +15,10 @@ const ASPECT_CLASS: Record<string, string> = {
 };
 
 /**
- * Cover image for a project card. Clicking it opens the project's
- * primary link (set by the parent anchor). No hover overlay, no iframe
- * preview — the image is a static thumbnail.
+ * Cover image for a project card. Static — no hover effects, no iframe.
+ * The screenshot for projects with a `live` link is captured via
+ * `scripts/capture-covers.mjs` and saved to /public/projects/<slug>/cover.webp.
+ * Click-through happens via the parent <a> in ProjectCard.
  */
 export function ProjectHoverPreview({
   project,

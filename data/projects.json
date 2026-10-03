@@ -13,8 +13,8 @@
                 { "kind": "github", "href": "https://github.com/Rujul-1105/conviction" }
             ],
             "cover": {
-                "src": "/conviction.png",
-                "alt": "Two opposing scoreboards with red and green threshold lines meeting at a tokenised chart.",
+                "src": "/projects/conviction/cover.webp",
+                "alt": "Screenshot of the deployed Conviction app — two opposing scoreboards with red and green threshold lines meeting at a tokenised chart.",
                 "width": 1600,
                 "height": 900,
                 "aspect": "16/9"
@@ -31,11 +31,15 @@
             "role": ".",
             "stack": [""],
             "links": [
+                {
+                    "kind": "live",
+                    "href": "https://crypto-exchange-rujul.vercel.app/trade/SOL-USDC"
+                },
                 { "kind": "github", "href": "https://github.com/Rujul-1105/crypto-exchange" }
             ],
             "cover": {
-                "src": "/cex.png",
-                "alt": "A red and green order-book ladder stretching into the distance, neon-lit on a dark terminal screen.",
+                "src": "/projects/Centralized Exchange/cover.webp",
+                "alt": "Screenshot of the Centralized Exchange trading interface.",
                 "width": 1600,
                 "height": 900,
                 "aspect": "16/9"
@@ -55,7 +59,7 @@
                 { "kind": "thread", "href": "https://x.com/rujul_11/status/2091509797363523647" }
             ],
             "cover": {
-                "src": "/rust_server.png",
+                "src": "/rust.png",
                 "alt": "An HTTP request arrow looping through a pool of worker threads, rendered on a black schematic.",
                 "width": 1600,
                 "height": 900,
