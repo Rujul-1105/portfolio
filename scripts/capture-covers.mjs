@@ -1,9 +1,13 @@
 // scripts/capture-covers.mjs
 //
-// Walks data/projects.json, finds every project with a `live` link,
-// and captures a screenshot of the deployed site. Saves it as
+// Walks data/projects.json, finds every project with a `live` link
+// (a deployed demo URL), and captures a screenshot of it. Saves as
 // public/projects/<slug>/cover.webp so it can be served as the
 // project card cover image.
+//
+// Only `links[].kind === "live"` is considered. A project's
+// `previewUrl` field (e.g. a GitHub repo URL) is NOT a candidate —
+// those don't render meaningfully in a headless screenshot.
 //
 // Usage: `node scripts/capture-covers.mjs` from the repo root.
 // (Re-runnable — overwrites existing screenshots.)
