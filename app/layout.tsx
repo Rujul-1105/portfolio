@@ -5,6 +5,7 @@ import {
   Fraunces,
   Boldonse,
   Josefin_Slab,
+  Oswald,
 } from "next/font/google";
 import { site } from "@/lib/content";
 import { buildMetadata, buildViewport } from "@/lib/seo";
@@ -49,6 +50,13 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-oswald",
+  display: "swap",
+});
+
 export const metadata = buildMetadata(site);
 export const viewport = buildViewport(site);
 
@@ -56,7 +64,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${bold.variable} ${display.variable} ${slab.variable} ${sans.variable} ${mono.variable}`}
+      className={`${bold.variable} ${display.variable} ${slab.variable} ${sans.variable} ${mono.variable} ${oswald.variable}`}
       suppressHydrationWarning
     >
       <head>

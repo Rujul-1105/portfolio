@@ -111,7 +111,7 @@ export function HeroSection() {
                         </motion.h1>
 
                         <motion.p
-                            className="font-display italic text-2xl md:text-3xl lg:text-4xl leading-[1.15] text-ink-2 max-w-[var(--container-prose)]"
+                            className="font-oswald text-2xl md:text-3xl lg:text-5xl uppercase leading-[1.1] tracking-[0.005em] text-ink-2 max-w-[var(--container-prose)]"
                             initial={reduced ? false : { opacity: 0, y: 16 }}
                             animate={reduced ? undefined : { opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.18, ease: EASE }}
