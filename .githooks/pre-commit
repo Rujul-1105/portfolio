@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+#
+# Auto-runs `scripts/capture-covers.mjs` whenever a commit touches
+# data/projects.json. Regenerates the WebP cover screenshots for any
+# project that has a `live` link, then stages the result.
+#
+# Activate in this repo with:
+#   git config core.hooksPath .githooks
+
+set -e
+
+STAGED=$(git diff --cached --name-only)
+
+# Bail early if the user isn't touching project data — no point
+# re-screenshotting on every commit.
+if ! echo "$STAGED" | grep -q '^data/projects\.json$'; then
+  exit 0
+fi
+
+echo "↻ data/projects.json changed — regenerating live cover screenshots"
+
+node scripts/capture-covers.mjs
+
+# Stage any covers the script just rewrote.
+git add public/projects/ 2>/dev/null || true
+
+exit 0
