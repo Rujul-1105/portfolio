@@ -3,11 +3,12 @@
     "handle": "@rujul_11",
     "twitter": "https://x.com/rujul_11",
     "github": "https://github.com/Rujul-1105",
-    "tagline": "Builds systems on Solana, Rust backends, and the occasional full-stack app.",
-    "role": "IIT Ropar",
-    "location": "IIT Ropar, Rupnagar, India",
+    "tagline": ".",
+    "role": "Student",
+    "location": "IIT Ropar, India",
     "email": "rujul.sol@gmail.com",
-    "bio": "Pre-final year at IIT Ropar, working at the intersection of Solana and systems engineering. I spend most days writing Anchor programs, Rust services, and the occasional Next.js app that holds the front end together. I care about correctness, fixed-point math, and shipping small things end-to-end.",
+    "bio": ".",
+    "bio_footer": ".",
     "socials": [
         { "label": "GitHub", "href": "https://github.com/Rujul-1105", "icon": "github" },
         { "label": "X", "href": "https://x.com/rujul_11", "icon": "x" },
@@ -25,8 +26,8 @@
         { "label": "Experience", "href": "#experience" }
     ],
     "meta": {
-        "titleTemplate": "%s — Portfolio",
-        "description": "Rujul Matta — software engineer at IIT Ropar. Solana programs, Rust services, and full-stack builds.",
+        "titleTemplate": "Portfolio",
+        "description": "Rujul Matta",
         "themeColor": "#050608"
     }
 }

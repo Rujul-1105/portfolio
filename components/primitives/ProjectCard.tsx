@@ -13,6 +13,7 @@ const LINK_LABEL: Record<ProjectLink["kind"], string> = {
   writeup: "Writeup",
   video: "Video",
   docs: "Docs",
+  thread: "Thread",
 };
 
 /**

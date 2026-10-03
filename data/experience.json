@@ -6,28 +6,21 @@
             "start": "2026-05",
             "end": "present",
             "location": "IIT Ropar",
-            "summary": "Lead the Software Community at IIT Ropar. Drove ~100% membership growth and a 4x increase in active participation. Organised overnight hackathons; shipped the BoST Portal — an umbrella platform for every technical club on campus, built on Next.js + MongoDB.",
-            "highlights": [
-                "Grew membership ~100% (20–25 → 45+) across recruitment cycles",
-                "Managed an 11-member coordination team",
-                "4x increase in active participation through events and projects",
-                "Organised an overnight campus hackathon end-to-end",
-                "Built the BoST Portal (Next.js + MongoDB), now used by every technical club on campus"
-            ],
+            "summary": ".",
+            "highlights": [""],
             "stack": [],
             "kind": "work"
         },
         {
-            "company": "Softcom — Software Community, IIT Ropar",
+            "company": "Software Community, IIT Ropar",
             "role": "Representative",
             "start": "2025-05",
             "end": "2026-05",
             "location": "IIT Ropar",
-            "summary": "Coordinated logistics, ran recruitment, and co-built the BoST Portal — an umbrella platform for all student technical clubs (Next.js 14 + MongoDB).",
+            "summary": ".",
             "highlights": [
                 "Led recruitment driving ~100% membership growth",
-                "4x increase in active participation across events and projects",
-                "Worked in an 11-member team across clubs"
+                "4x increase in active participation across events and projects"
             ],
             "stack": ["Next.js", "MongoDB", "Tailwind"],
             "kind": "work"

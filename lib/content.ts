@@ -69,7 +69,7 @@ const projectSchema = z.object({
     links: z
         .array(
             z.object({
-                kind: z.enum(["live", "github", "writeup", "video", "docs"]),
+                kind: z.enum(["live", "github", "writeup", "video", "docs", "thread"]),
                 href: z.string().url(),
                 label: z.string().optional(),
             })

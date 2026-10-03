@@ -2,7 +2,7 @@
     "skills": [
         {
             "category": "Languages",
-            "items": ["Rust", "TypeScript", "C++", "Python", "JavaScript"]
+            "items": ["Rust", "Python", "C++", "TypeScript", "JavaScript"]
         },
         {
             "category": "Systems & Networking",
@@ -26,6 +26,22 @@
         },
         {
             "category": "Frameworks & Tools",
+            "items": [
+                "Next.js",
+                "React-19",
+                "Vite",
+                "Tailwind",
+                "GSAP",
+                "Framer Motion",
+                "Zustand",
+                "Scikit-learn",
+                "NumPy",
+                "Pandas",
+                "Git"
+            ]
+        },
+        {
+            "category": "Decentralized and Quantitative Finance",
             "items": [
                 "Next.js",
                 "React-19",

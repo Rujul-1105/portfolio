@@ -44,7 +44,7 @@ export interface SiteConfig {
     };
 }
 
-export type ProjectLinkKind = "live" | "github" | "writeup" | "video" | "docs";
+export type ProjectLinkKind = "live" | "github" | "writeup" | "video" | "docs" | "thread";
 
 export interface ProjectLink {
     kind: ProjectLinkKind;
