@@ -7,15 +7,15 @@ import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { ActivitySection } from "@/components/sections/ActivitySection";
 
 export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <SkillsSection />
-      <NowSection />
-      <ExperienceSection />
-      <ProjectsSection />
-      <ActivitySection />
-    </>
-  );
+    return (
+        <>
+            <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            {/* <NowSection /> */}
+            <ProjectsSection />
+            <ExperienceSection />
+            <ActivitySection />
+        </>
+    );
 }

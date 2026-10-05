@@ -5,54 +5,56 @@
             "items": ["Rust", "Python", "C++", "TypeScript", "JavaScript"]
         },
         {
-            "category": "Systems & Networking",
-            "items": ["TCP/IP", "Socket-Programming", "Multithreading", "Redis Streams"]
-        },
-        {
             "category": "Blockchain",
             "items": [
                 "Solana",
                 "Anchor",
-                "SPL Token-2022",
+                "Token-2022",
                 "PDAs",
                 "CPIs",
                 "LiteSVM",
-                "MagicBlock: ER/PER/VRF"
+                "Ephemeral Rollups",
+                "Private Ephemeral Rollups",
+                "Verifiable Random Functions"
             ]
         },
         {
+            "category": "Systems & Networking",
+            "items": ["TCP/IP", "Socket-Programming", "Multithreading", "Redis Streams"]
+        },
+
+        {
             "category": "Databases & DevOps",
-            "items": ["PostgreSQL", "MongoDB", "SQL", "Docker"]
+            "items": ["PostgreSQL", "MongoDB", "AWS", "Docker", "Kubernetes"]
+        },
+        {
+            "category": "Decentralized and Quantitative Finance",
+            "items": [
+                "AMMs",
+                "Liquidity Pools",
+                "Yield Farming",
+                "Staking",
+                "Tokenomics",
+                "Collateralized Lending Protocols",
+                "Algorithmic Trading",
+                "Statistical Arbitrage"
+            ]
         },
         {
             "category": "Frameworks & Tools",
             "items": [
                 "Next.js",
-                "React-19",
+                "Node.js",
+                "Express.js",
+                "React",
                 "Vite",
                 "Tailwind",
                 "GSAP",
-                "Framer Motion",
                 "Zustand",
                 "Scikit-learn",
                 "NumPy",
                 "Pandas",
-                "Git"
-            ]
-        },
-        {
-            "category": "Decentralized and Quantitative Finance",
-            "items": [
-                "Next.js",
-                "React-19",
-                "Vite",
-                "Tailwind",
-                "GSAP",
-                "Framer Motion",
-                "Zustand",
-                "Scikit-learn",
-                "NumPy",
-                "Pandas",
+                "Anchor",
                 "Git"
             ]
         }

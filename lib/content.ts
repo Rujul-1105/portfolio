@@ -112,7 +112,7 @@ const experienceSchema = z.object({
                 start: z.string().min(1),
                 end: z.union([z.string(), z.literal("present")]),
                 location: z.string().optional(),
-                summary: z.string().min(1),
+                summary: z.string().optional(),
                 highlights: z.array(z.string()).optional(),
                 stack: z.array(z.string()).optional(),
                 kind: z.enum(["work", "internship", "freelance", "research", "teaching"]),

@@ -7,15 +7,17 @@ export function TopNav() {
   return (
     <header className="sticky top-0 z-30 backdrop-blur-md bg-paper/75 dark:bg-paper/75 border-b border-line">
       <nav className="mx-auto flex w-full max-w-[var(--container-wide)] items-center justify-between gap-4 md:gap-6 px-4 md:px-10 lg:px-16 py-4 md:py-5">
-        <a
-          href="#top"
-          className="group flex items-baseline gap-2 shrink-0"
-          aria-label="Home"
-        >
-          <span aria-hidden className="status-dot" />
-          <span className="font-bold text-base tracking-[-0.03em] text-ink group-hover:text-neon transition-colors">
-            {site.name}
-          </span>
+        <div className="flex items-baseline gap-2 shrink-0">
+          <a
+            href="#top"
+            className="group flex items-baseline gap-2"
+            aria-label="Home"
+          >
+            <span aria-hidden className="status-dot" />
+            <span className="font-bold text-base tracking-[-0.03em] text-ink group-hover:text-neon transition-colors">
+              {site.name}
+            </span>
+          </a>
           <a
             href={twitterHref}
             target="_blank"
@@ -25,7 +27,7 @@ export function TopNav() {
           >
             {site.handle}
           </a>
-        </a>
+        </div>
 
         <ul className="hidden md:flex items-center gap-x-6 font-mono text-[11px] uppercase tracking-[var(--tracking-caps)] text-ink-2">
           {site.nav.map((item) => (

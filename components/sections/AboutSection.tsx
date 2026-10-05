@@ -2,9 +2,12 @@ import { site } from "@/lib/content";
 import { Reveal } from "@/components/motion/Reveal";
 
 const VALUES = [
-    { label: "Calm", body: "Software that doesn't shout for attention." },
-    { label: "Considered", body: "Small details done with intention." },
-    { label: "Durable", body: "Built to be maintained, not replaced." },
+    { label: "Software", body: "Rust, Solana & on-chain experimentation." },
+    {
+        label: "Finance",
+        body: "Exploring quantitative finance, trading & DeFi.",
+    },
+    { label: "Miscellaneous", body: "Physics, mathematics & curiosity" },
 ];
 
 export function AboutSection() {

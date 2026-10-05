@@ -58,6 +58,11 @@
   --color-magenta: #ff0080;
   --color-cyan: #00d9ff;
 
+  /* Inverted card-frame border. Dark mode pops a light-grey outline
+     against the black paper; light mode pops a near-black outline
+     against the off-white paper. Used by project cards. */
+  --color-frame: #d4d4d4;
+
   /* Aliases for primitives shared with v1 (text-neon → green here) */
   --color-neon: #00ff9d;
   --color-neon-bright: #4dffba;
@@ -83,6 +88,8 @@
 
   --color-magenta: #c91b6e;
   --color-cyan: #0078a8;
+
+  --color-frame: #0a0a0a;
 
   --color-neon: #00875a;
   --color-neon-bright: #00a872;

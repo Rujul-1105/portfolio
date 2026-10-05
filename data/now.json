@@ -1,35 +1,22 @@
 {
-  "updated": "2026-10-02T09:00:00Z",
-  "window": "October 2026",
-  "headline": "Shipping Conviction, finishing Meridian, sharpening CEX.",
-  "blocks": [
-    {
-      "title": "Building",
-      "body": "Conviction is live on devnet and I'm tightening the match flow — better edge cases, cleaner settlement, and the long tail of small UX details. Meridian is in clearance review ahead of the Anchor SDK cutover. CEX Demo is in polish mode: nicer charts, fewer race conditions in the settler worker.",
-      "items": [
-        "Conviction — settlement edge cases and a quieter match screen",
-        "Meridian (Trevault / TVLT) — wiring Pyth + Switchboard oracles and the liquidation path",
-        "CEX Demo — chart ergonomics, settle endpoint slowness, phantom reconnection flow",
-        "BoST Portal at Softcom — onboarding the next batch of club maintainers"
-      ]
-    },
-    {
-      "title": "Learning",
-      "body": "Working through Crafting Interpreters in Rust end-to-end — rewriting the Java tree-walker chapter in Rust and finding that half the lessons are about lifetimes, not parsers. Slowly working through a second pass of Designing Data-Intensive Applications.",
-      "items": [
-        "Crafting Interpreters — rewriting chapters in Rust",
-        "Designing Data-Intensive Applications — second pass, with pen",
-        "Solana program security reading list (Neodyme + Trail of Bits writeups)"
-      ]
-    },
-    {
-      "title": "Reading",
-      "body": "Slowly, deliberately. The list below is roughly what I'm between right now.",
-      "items": [
-        "The Big Short — Michael Lewis",
-        "Working in Public — Nadia Eghbal",
-        "The Man Who Solved the Market — Gregory Zuckerman"
-      ]
-    }
-  ]
+    "updated": "2026-10-02T09:00:00Z",
+    "window": "October 2026",
+    "headline": ".",
+    "blocks": [
+        {
+            "title": ".",
+            "body": ".",
+            "items": [""]
+        },
+        {
+            "title": ".",
+            "body": ".",
+            "items": [""]
+        },
+        {
+            "title": ".",
+            "body": ".",
+            "items": ["."]
+        }
+    ]
 }

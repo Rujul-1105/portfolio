@@ -37,7 +37,7 @@ export function HeroSection() {
             </div>
             <div
                 aria-hidden
-                className="pointer-events-none absolute -right-[18%] -top-[10%] w-[340px] md:w-[520px] text-neon/40 md:text-neon/30 drift slow-rotate"
+                className="pointer-events-none absolute -right-[10%] -top-[10%] w-[340px] md:w-[520px] text-neon/40 md:text-neon/30 drift slow-rotate"
             >
                 <GeometricAccent variant="ring" strokeWidth={1} />
             </div>
@@ -103,7 +103,7 @@ export function HeroSection() {
                             <span>{first}</span>
                             {last ? (
                                 <>
-                                    <span aria-hidden className="text-neon"></span>
+                                    {/* <span aria-hidden className="text-neon"></span> */}
                                     <span>{last}</span>
                                 </>
                             ) : null}
@@ -111,7 +111,7 @@ export function HeroSection() {
                         </motion.h1>
 
                         <motion.p
-                            className="font-oswald text-2xl md:text-3xl lg:text-3xl leading-[1.1] tracking-[0.005em] text-ink-2 max-w-[var(--container-prose)] mt-2"
+                            className="font-oswald text-2xl md:text-3xl lg:text-3xl leading-[1.1] tracking-[0.005em] text-ink-2 max-w-[var(--container-prose)] mt-6 ml-2"
                             initial={reduced ? false : { opacity: 0, y: 16 }}
                             animate={reduced ? undefined : { opacity: 1, y: 0 }}
                             transition={{ duration: 0.9, delay: 0.18, ease: EASE }}

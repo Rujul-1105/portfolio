@@ -94,7 +94,7 @@ export interface ExperienceEntry {
     start: string; // ISO "YYYY-MM"
     end: string | "present";
     location?: string;
-    summary: string;
+    summary?: string;
     highlights?: string[];
     stack?: string[];
     kind: ExperienceKind;

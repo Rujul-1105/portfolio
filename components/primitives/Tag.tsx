@@ -7,7 +7,7 @@ interface TagProps {
 export function Tag({ children, className }: TagProps) {
   return (
     <span
-      className={`font-mono text-[11px] uppercase tracking-[var(--tracking-mono)] text-muted ${className ?? ""}`}
+      className={`font-mono text-[11px] uppercase tracking-[var(--tracking-mono)] text-ink ${className ?? ""}`}
     >
       {children}
     </span>

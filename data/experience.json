@@ -1,14 +1,22 @@
 {
     "experience": [
         {
-            "company": "Softcom — Software Community, IIT Ropar",
+            "company": "Software Community, IIT Ropar",
             "role": "Secretary",
             "start": "2026-05",
             "end": "present",
             "location": "IIT Ropar",
-            "summary": ".",
+            "summary": "",
             "highlights": [""],
-            "stack": [],
+            "stack": [
+                "Solana",
+                "Anchor",
+                "Token-2022",
+                "PDAs",
+                "CPIs",
+                "LiteSVM",
+                "@solana/web3.js"
+            ],
             "kind": "work"
         },
         {
@@ -17,12 +25,22 @@
             "start": "2025-05",
             "end": "2026-05",
             "location": "IIT Ropar",
-            "summary": ".",
+            "summary": "",
             "highlights": [
                 "Led recruitment driving ~100% membership growth",
-                "4x increase in active participation across events and projects"
+                "4x increase in active participation across events and projects",
+                "Organised an overnight hackathon, driving active participation across the campus."
             ],
-            "stack": ["Next.js", "MongoDB", "Tailwind"],
+            "stack": [
+                "Next.js",
+                "MongoDB",
+                "Tailwind",
+                "TypeScript",
+                "React",
+                "Git",
+                "Node.js",
+                "Zustand"
+            ],
             "kind": "work"
         }
     ]

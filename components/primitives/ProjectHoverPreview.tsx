@@ -15,10 +15,8 @@ const ASPECT_CLASS: Record<string, string> = {
 };
 
 /**
- * Cover image for a project card. Static — no hover effects, no iframe.
- * The screenshot for projects with a `live` link is captured via
- * `scripts/capture-covers.mjs` and saved to /public/projects/<slug>/cover.webp.
- * Click-through happens via the parent <a> in ProjectCard.
+ * Cover image for a project card. Just a rounded container with a
+ * drop shadow — no border.
  */
 export function ProjectHoverPreview({
   project,
@@ -29,7 +27,7 @@ export function ProjectHoverPreview({
 
   return (
     <div
-      className={`relative w-full overflow-hidden border border-line bg-paper-2 ${aspectClass}`}
+      className={`relative w-full overflow-hidden rounded-md bg-paper-2 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.6)] hover:shadow-[0_16px_50px_-12px_rgba(0,255,157,0.3)] transition-shadow duration-500 ${aspectClass}`}
     >
       <Image
         src={project.cover.src}

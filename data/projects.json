@@ -1,73 +1,86 @@
 {
-    "projects": [
-        {
-            "slug": "conviction",
-            "title": "Conviction",
-            "year": "2026",
-            "summary": ".",
-            "description": ".",
-            "role": ".",
-            "stack": [""],
-            "links": [
-                { "kind": "live", "href": "https://conviction-nine.vercel.app" },
-                { "kind": "github", "href": "https://github.com/Rujul-1105/conviction" }
-            ],
-            "cover": {
-                "src": "/projects/conviction/cover.webp",
-                "alt": "Screenshot of the deployed Conviction app — two opposing scoreboards with red and green threshold lines meeting at a tokenised chart.",
-                "width": 1600,
-                "height": 900,
-                "aspect": "16/9"
-            },
-            "status": "shipped",
-            "previewUrl": "https://conviction-nine.vercel.app"
-        },
-        {
-            "slug": "Centralized Exchange",
-            "title": "Centralized Exchange",
-            "year": "2026",
-            "summary": ".",
-            "description": ".",
-            "role": ".",
-            "stack": [""],
-            "links": [
-                {
-                    "kind": "live",
-                    "href": "https://crypto-exchange-rujul.vercel.app/trade/SOL-USDC"
-                },
-                { "kind": "github", "href": "https://github.com/Rujul-1105/crypto-exchange" }
-            ],
-            "cover": {
-                "src": "/projects/Centralized Exchange/cover.webp",
-                "alt": "Screenshot of the Centralized Exchange trading interface.",
-                "width": 1600,
-                "height": 900,
-                "aspect": "16/9"
-            },
-            "status": "shipped"
-        },
-        {
-            "slug": "rust-server",
-            "title": "Rust Web Server",
-            "year": "2026",
-            "summary": ".",
-            "description": ".",
-            "role": "Rust learning project",
-            "stack": ["Rust 2024 edition (stdlib only)"],
-            "links": [
-                { "kind": "live", "href": "https://github.com/Rujul-1105/rust-web-server" },
-                { "kind": "github", "href": "https://github.com/Rujul-1105/rust-web-server" },
-                { "kind": "thread", "href": "https://x.com/rujul_11/status/2091509797363523647" }
-            ],
-            "cover": {
-                "src": "/",
-                "alt": "An HTTP request arrow looping through a pool of worker threads, rendered on a black schematic.",
-                "width": 1600,
-                "height": 900,
-                "aspect": "16/9"
-            },
-            "status": "shipped",
-            "previewUrl": "https://github.com/Rujul-1105/rust-web-server"
-        }
-    ]
+  "projects": [
+    {
+      "slug": "conviction",
+      "title": "Conviction",
+      "year": "2026",
+      "summary": "A real-time risk duel on Solana — two teams stake token baskets behind sealed threshold bands; whoever breaks out first auto-folds and the survivor mints the round's governance token.",
+      "description": "Built on MagicBlock Permissioned Ephemeral Rollups with a 25-instruction Anchor program, 25-SPL curated universe, and Birdeye live prices (with seed-walk fallback). 10-route Next.js frontend with shadcn, Framer Motion, and Zustand. Submitted for MagicBlock Blitz v8.",
+      "role": "Solo build",
+      "stack": [
+        "Anchor (Rust)",
+        "Solana",
+        "Next.js 14",
+        "MagicBlock ER/PER/VRF",
+        "shadcn",
+        "Framer Motion",
+        "Birdeye API",
+        "Zustand",
+        "React Query"
+      ],
+      "links": [
+        { "kind": "live", "href": "https://conviction-nine.vercel.app" },
+        { "kind": "github", "href": "https://github.com/Rujul-1105/conviction" }
+      ],
+      "cover": {
+        "src": "/projects/conviction/cover.webp",
+        "alt": "Screenshot of the deployed Conviction app — two opposing scoreboards with red and green threshold lines meeting at a tokenised chart.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped",
+      "previewUrl": "https://conviction-nine.vercel.app"
+    },
+    {
+      "slug": "Centralized Exchange",
+      "title": "Centralized Exchange",
+      "year": "2026",
+      "summary": "A full centralised exchange on Solana devnet — stateless actix-web REST API, stateful order-book matching engine, and a settler worker, all bridged via Redis Streams.",
+      "description": "Matching engine supports limit, market (IOC), stop, and stop-limit orders with FIFO price-time priority, partial fills, and self-match prevention. Anchor program handles deposit, withdraw, and settle_fill. Next.js 14 frontend with Phantom wallet, TradingView charts via lightweight-charts, and TanStack Query. Program ID: DNhvifJ6mcgVRRA4xaNKH82tjoHseN3GQKiLi8R7i6HY.",
+      "role": "Solo build",
+      "stack": [
+        "Rust (actix-web, redis, tokio, ed25519-dalek, jsonwebtoken, rust_decimal)",
+        "Anchor 0.31",
+        "Next.js 14",
+        "@solana/web3.js",
+        "lightweight-charts",
+        "TanStack Query",
+        "Zustand"
+      ],
+      "links": [
+        { "kind": "live", "href": "https://crypto-exchange-rujul.vercel.app/trade/SOL-USDC" },
+        { "kind": "github", "href": "https://github.com/Rujul-1105/crypto-exchange" }
+      ],
+      "cover": {
+        "src": "/projects/Centralized Exchange/cover.webp",
+        "alt": "Screenshot of the Centralized Exchange trading interface — order book, chart, and trade form.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped"
+    },
+    {
+      "slug": "rust-server",
+      "title": "Rust Web Server",
+      "year": "2026",
+      "summary": "A multithreaded HTTP/1.1 server in pure Rust stdlib — custom reusable ThreadPool, real HTTP parser, function-pointer router, graceful shutdown.",
+      "description": "Replaces thread-per-request with a custom reusable ThreadPool. Real HTTP/1.1 parser, function-pointer router, generic handlers, named workers, graceful shutdown signal handling. Routes /, /sleep, /health, plus 404 / 405. Built from The Rust Book chapter 20 and extended — no third-party deps.",
+      "role": "Solo build",
+      "stack": ["Rust 2024 edition (stdlib only)"],
+      "links": [
+        { "kind": "github", "href": "https://github.com/Rujul-1105/rust-web-server" },
+        { "kind": "thread", "href": "https://x.com/rujul_11/status/2091509797363523647" }
+      ],
+      "cover": {
+        "src": "/projects/rust-server/cover.webp",
+        "alt": "An HTTP request arrow looping through a pool of worker threads, rendered on a black schematic.",
+        "width": 1600,
+        "height": 900,
+        "aspect": "16/9"
+      },
+      "status": "shipped"
+    }
+  ]
 }
