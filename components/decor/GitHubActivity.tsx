@@ -42,6 +42,30 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
         }
     }
 
+    // Build the cells as a raw SVG string. React's JSX runtime can emit
+    // <title> inside <rect> in the HTML namespace instead of the SVG
+    // namespace, which causes a server/client hydration mismatch on the
+    // contribution grid. Injecting the cells via dangerouslySetInnerHTML
+    // bypasses React's namespace handling so the <title> lands in the
+    // SVG namespace on both sides.
+    //
+    // All interpolated values are numbers, a CSS var name, or YYYY-MM-DD,
+    // so none can introduce HTML-significant characters — no escaping needed.
+    const cellsMarkup = data.cells
+        .map((c, i) => {
+            const w = Math.floor(i / 7);
+            const d = i % 7;
+            const x = w * stride;
+            const y = d * stride;
+            const fill = colorFor(c.level);
+            return (
+                `<rect x="${x}" y="${y}" width="${cell}" height="${cell}" rx="2.5" ry="2.5" fill="${fill}">` +
+                `<title>${c.count} contribution${c.count === 1 ? "" : "s"} on ${c.date}</title>` +
+                `</rect>`
+            );
+        })
+        .join("");
+
     return (
         <div className="w-full">
             <div className="overflow-x-auto -mx-2 px-2 pb-2">
@@ -86,29 +110,11 @@ export function GitHubActivity({ data }: GitHubActivityProps) {
                         )}
                     </g>
 
-                    {/* Cells */}
-                    <g transform={`translate(${labelGutter}, 22)`}>
-                        {data.cells.map((c, i) => {
-                            const w = Math.floor(i / 7);
-                            const d = i % 7;
-                            return (
-                                <rect
-                                    key={c.date}
-                                    x={w * stride}
-                                    y={d * stride}
-                                    width={cell}
-                                    height={cell}
-                                    rx={2.5}
-                                    ry={2.5}
-                                    fill={colorFor(c.level)}
-                                >
-                                    <title>
-                                        {c.count} contribution{c.count === 1 ? "" : "s"} on {c.date}
-                                    </title>
-                                </rect>
-                            );
-                        })}
-                    </g>
+                    {/* Cells — see cellsMarkup note above */}
+                    <g
+                        transform={`translate(${labelGutter}, 22)`}
+                        dangerouslySetInnerHTML={{ __html: cellsMarkup }}
+                    />
                 </svg>
             </div>
 
