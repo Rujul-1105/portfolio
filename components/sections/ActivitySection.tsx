@@ -25,7 +25,7 @@ export async function ActivitySection() {
     const isMock = real === null;
 
     return (
-        <Section id="activity" index="06" title="Activity" meta="Last 365 days">
+        <Section id="activity" index="05" title="Activity" meta="Last 365 days">
             <Reveal>
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-4 items-baseline mb-8 md:mb-10">
                     <div className="md:col-span-3">
